@@ -555,3 +555,226 @@ header h1 {
         font-size: 0.8rem;
     }
 }
+
+/* 模擬試験モード */
+.exam-section {
+    margin-top: 20px;
+}
+
+.btn-exam {
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    color: #fff;
+    width: 100%;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-exam:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(155, 89, 182, 0.4);
+}
+
+/* 模擬試験選択画面 */
+.exam-select-content {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.exam-select-content h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #9b59b6;
+}
+
+.exam-description {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+}
+
+.exam-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.exam-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(155, 89, 182, 0.3);
+    border-radius: 16px;
+    padding: 30px;
+    flex: 1;
+    max-width: 280px;
+    transition: all 0.3s ease;
+}
+
+.exam-card:hover {
+    border-color: #9b59b6;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(155, 89, 182, 0.3);
+}
+
+.exam-card h3 {
+    font-size: 1.5rem;
+    color: #9b59b6;
+    margin-bottom: 15px;
+}
+
+.exam-details {
+    margin-bottom: 20px;
+}
+
+.exam-details p {
+    margin: 8px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.exam-note {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+/* タイマー表示 */
+.timer-display {
+    background: rgba(155, 89, 182, 0.3);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+}
+
+.timer-display.warning {
+    background: rgba(255, 68, 68, 0.3);
+    color: #ff6b6b;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* 模擬試験結果 */
+.exam-result-section {
+    background: rgba(155, 89, 182, 0.15);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+}
+
+.exam-result-section h3 {
+    color: #9b59b6;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.exam-score-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.estimated-score {
+    text-align: center;
+}
+
+.estimated-score .score-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #9b59b6;
+}
+
+.estimated-score .score-max {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.rank-display {
+    text-align: center;
+    padding: 15px 30px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.rank-display .rank-label {
+    display: block;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+}
+
+.rank-display .rank-value {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.rank-display.gold .rank-value {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.rank-display.silver .rank-value {
+    color: #c0c0c0;
+    text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+}
+
+.rank-display.bronze .rank-value {
+    color: #cd7f32;
+    text-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
+}
+
+.exam-result-section .exam-note {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+/* 選択済みスタイル（模擬試験用） */
+.choice-btn.selected {
+    background: rgba(155, 89, 182, 0.3);
+    border-color: #9b59b6;
+}
+
+.choice-btn.selected .choice-label {
+    background: #9b59b6;
+}
+
+/* レスポンシブ追加 */
+@media (max-width: 600px) {
+    .exam-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .exam-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .exam-score-display {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .estimated-score .score-value {
+        font-size: 2.5rem;
+    }
+
+    .timer-display {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+}

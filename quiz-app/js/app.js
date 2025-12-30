@@ -9,6 +9,16 @@ class QuizApp {
         this.isRandom = false;
         this.isReviewMode = false;
 
+        // 模擬試験モード用
+        this.isExamMode = false;
+        this.examType = null; // 'gait2' or 'egait2'
+        this.examConfig = {
+            gait2: { questions: 160, timeMinutes: 60, maxScore: 990 },
+            egait2: { questions: 80, timeMinutes: 30, maxScore: 300 }
+        };
+        this.timerInterval = null;
+        this.remainingSeconds = 0;
+
         // ローカルストレージのキー
         this.STORAGE_KEY = 'gait_quiz_data';
 
@@ -139,9 +149,104 @@ class QuizApp {
         document.getElementById('btn-next').addEventListener('click', () => this.nextQuestion());
         document.getElementById('btn-retry').addEventListener('click', () => this.retryQuiz());
         document.getElementById('btn-home').addEventListener('click', () => this.goHome());
-        document.getElementById('btn-back').addEventListener('click', () => this.goHome());
+        document.getElementById('btn-back').addEventListener('click', () => this.confirmExit());
         document.getElementById('btn-clear-data').addEventListener('click', () => this.clearData());
         document.getElementById('category-select').addEventListener('change', () => this.updateQuestionCount());
+
+        // 模擬試験モード用
+        document.getElementById('btn-mock-exam').addEventListener('click', () => this.showExamSelect());
+        document.getElementById('btn-exam-back').addEventListener('click', () => this.goHome());
+        document.getElementById('btn-start-gait2').addEventListener('click', () => this.startExam('gait2'));
+        document.getElementById('btn-start-egait2').addEventListener('click', () => this.startExam('egait2'));
+    }
+
+    // 終了確認
+    confirmExit() {
+        if (this.isExamMode) {
+            if (confirm('模擬試験を中断しますか？\n進捗は保存されません。')) {
+                this.stopTimer();
+                this.goHome();
+            }
+        } else {
+            this.goHome();
+        }
+    }
+
+    // 模擬試験選択画面を表示
+    showExamSelect() {
+        this.showScreen('exam-select-screen');
+    }
+
+    // 模擬試験を開始
+    startExam(examType) {
+        this.examType = examType;
+        this.isExamMode = true;
+        this.isReviewMode = false;
+
+        const config = this.examConfig[examType];
+        const requiredQuestions = config.questions;
+
+        // 問題を準備（足りない場合は繰り返し）
+        let examQuestions = this.shuffleArray([...this.questions]);
+        while (examQuestions.length < requiredQuestions) {
+            examQuestions = examQuestions.concat(this.shuffleArray([...this.questions]));
+        }
+        this.currentQuestions = examQuestions.slice(0, requiredQuestions);
+
+        this.currentIndex = 0;
+        this.score = 0;
+        this.answers = [];
+
+        // タイマー設定
+        this.remainingSeconds = config.timeMinutes * 60;
+
+        this.showScreen('quiz-screen');
+        this.showQuestion();
+        this.startTimer();
+    }
+
+    // タイマー開始
+    startTimer() {
+        const timerDisplay = document.getElementById('timer-display');
+        timerDisplay.classList.remove('hidden');
+        this.updateTimerDisplay();
+
+        this.timerInterval = setInterval(() => {
+            this.remainingSeconds--;
+            this.updateTimerDisplay();
+
+            if (this.remainingSeconds <= 0) {
+                this.stopTimer();
+                alert('時間切れです！');
+                this.showResults();
+            }
+        }, 1000);
+    }
+
+    // タイマー停止
+    stopTimer() {
+        if (this.timerInterval) {
+            clearInterval(this.timerInterval);
+            this.timerInterval = null;
+        }
+        const timerDisplay = document.getElementById('timer-display');
+        timerDisplay.classList.add('hidden');
+    }
+
+    // タイマー表示を更新
+    updateTimerDisplay() {
+        const minutes = Math.floor(this.remainingSeconds / 60);
+        const seconds = this.remainingSeconds % 60;
+        const display = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        const timerDisplay = document.getElementById('timer-display');
+        timerDisplay.textContent = display;
+
+        // 残り5分以下で警告色
+        if (this.remainingSeconds <= 300) {
+            timerDisplay.classList.add('warning');
+        } else {
+            timerDisplay.classList.remove('warning');
+        }
     }
 
     // 復習モードを開始
@@ -291,7 +396,22 @@ class QuizApp {
             this.score++;
         }
 
-        // 選択肢のスタイルを更新
+        // 模擬試験モードの場合は即座に次の問題へ
+        if (this.isExamMode) {
+            const buttons = document.querySelectorAll('.choice-btn');
+            buttons.forEach(btn => btn.classList.add('disabled'));
+
+            // 選択した選択肢をハイライト
+            buttons[selectedIndex].classList.add('selected');
+
+            // 少し遅延して次の問題へ
+            setTimeout(() => {
+                this.nextQuestion();
+            }, 300);
+            return;
+        }
+
+        // 通常モード：選択肢のスタイルを更新
         const buttons = document.querySelectorAll('.choice-btn');
         buttons.forEach((btn, index) => {
             btn.classList.add('disabled');
@@ -333,6 +453,11 @@ class QuizApp {
     }
 
     showResults() {
+        // 模擬試験モードの場合はタイマーを停止
+        if (this.isExamMode) {
+            this.stopTimer();
+        }
+
         this.showScreen('result-screen');
 
         const total = this.currentQuestions.length;
@@ -345,11 +470,60 @@ class QuizApp {
         // カテゴリ別スコアを計算
         this.showCategoryScores();
 
+        // 模擬試験モードの場合はスコア換算を表示
+        if (this.isExamMode) {
+            this.showExamScore();
+        }
+
         // 進捗バーを100%に
         document.getElementById('progress').style.width = '100%';
 
         // ローカルストレージにデータを保存
         this.saveResults();
+    }
+
+    // 模擬試験のスコアを表示
+    showExamScore() {
+        const config = this.examConfig[this.examType];
+        const total = this.currentQuestions.length;
+        const estimatedScore = Math.round((this.score / total) * config.maxScore);
+
+        // スコアランク判定
+        let rank = '';
+        let rankClass = '';
+        if (this.examType === 'gait2') {
+            if (estimatedScore >= 800) { rank = 'Gold'; rankClass = 'gold'; }
+            else if (estimatedScore >= 600) { rank = 'Silver'; rankClass = 'silver'; }
+            else if (estimatedScore >= 400) { rank = 'Bronze'; rankClass = 'bronze'; }
+            else { rank = '-'; rankClass = ''; }
+        } else {
+            if (estimatedScore >= 240) { rank = 'Gold'; rankClass = 'gold'; }
+            else if (estimatedScore >= 180) { rank = 'Silver'; rankClass = 'silver'; }
+            else if (estimatedScore >= 120) { rank = 'Bronze'; rankClass = 'bronze'; }
+            else { rank = '-'; rankClass = ''; }
+        }
+
+        const examTypeName = this.examType === 'gait2' ? 'GAIT2.0' : 'e-GAIT2.0';
+
+        const examScoreHtml = `
+            <div class="exam-result-section">
+                <h3>${examTypeName} 模擬試験結果</h3>
+                <div class="exam-score-display">
+                    <div class="estimated-score">
+                        <span class="score-value">${estimatedScore}</span>
+                        <span class="score-max">/ ${config.maxScore}点</span>
+                    </div>
+                    <div class="rank-display ${rankClass}">
+                        <span class="rank-label">ランク:</span>
+                        <span class="rank-value">${rank}</span>
+                    </div>
+                </div>
+                <p class="exam-note">※ 実際の試験とは採点方式が異なる場合があります</p>
+            </div>
+        `;
+
+        const container = document.getElementById('category-scores');
+        container.insertAdjacentHTML('beforebegin', examScoreHtml);
     }
 
     // 結果をローカルストレージに保存
@@ -430,10 +604,31 @@ class QuizApp {
     }
 
     retryQuiz() {
-        this.startQuiz(this.isRandom);
+        // 模擬試験結果セクションを削除
+        const examResultSection = document.querySelector('.exam-result-section');
+        if (examResultSection) {
+            examResultSection.remove();
+        }
+
+        if (this.isExamMode) {
+            this.startExam(this.examType);
+        } else {
+            this.startQuiz(this.isRandom);
+        }
     }
 
     goHome() {
+        // 模擬試験モードをリセット
+        this.isExamMode = false;
+        this.examType = null;
+        this.stopTimer();
+
+        // 模擬試験結果セクションを削除
+        const examResultSection = document.querySelector('.exam-result-section');
+        if (examResultSection) {
+            examResultSection.remove();
+        }
+
         this.showScreen('start-screen');
         this.updateQuestionCount();
         this.updateStatsDisplay();

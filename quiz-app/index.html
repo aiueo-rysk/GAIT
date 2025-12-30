@@ -42,6 +42,10 @@
                     <button id="btn-review" class="btn btn-review" disabled>復習する問題なし</button>
                 </div>
 
+                <div class="exam-section">
+                    <button id="btn-mock-exam" class="btn btn-exam">模擬試験モード</button>
+                </div>
+
                 <!-- 苦手カテゴリ -->
                 <div class="weak-section">
                     <h3>カテゴリ別正答率</h3>
@@ -56,6 +60,40 @@
             </div>
         </div>
 
+        <!-- 模擬試験選択画面 -->
+        <div id="exam-select-screen" class="screen hidden">
+            <div class="exam-select-content">
+                <h2>模擬試験モード</h2>
+                <p class="exam-description">本番と同じ形式で挑戦しましょう</p>
+
+                <div class="exam-options">
+                    <div class="exam-card" data-exam="gait2">
+                        <h3>GAIT2.0</h3>
+                        <div class="exam-details">
+                            <p><strong>160問</strong></p>
+                            <p>制限時間: 60分</p>
+                            <p>990点満点</p>
+                        </div>
+                        <button id="btn-start-gait2" class="btn btn-primary">開始</button>
+                    </div>
+
+                    <div class="exam-card" data-exam="egait2">
+                        <h3>e-GAIT2.0</h3>
+                        <div class="exam-details">
+                            <p><strong>80問</strong></p>
+                            <p>制限時間: 30分</p>
+                            <p>300点満点</p>
+                        </div>
+                        <button id="btn-start-egait2" class="btn btn-primary">開始</button>
+                    </div>
+                </div>
+
+                <p class="exam-note">※ 問題数が足りない場合はランダムに繰り返し出題されます</p>
+
+                <button id="btn-exam-back" class="btn btn-secondary">戻る</button>
+            </div>
+        </div>
+
         <!-- クイズ画面 -->
         <div id="quiz-screen" class="screen hidden">
             <div class="progress-bar">
@@ -65,6 +103,7 @@
             <div class="quiz-header">
                 <button id="btn-back" class="btn-back" title="トップに戻る">← 終了</button>
                 <span id="question-number">問題 1/10</span>
+                <span id="timer-display" class="timer-display hidden">00:00</span>
                 <span id="category-badge" class="category-badge">カテゴリ</span>
             </div>
 
