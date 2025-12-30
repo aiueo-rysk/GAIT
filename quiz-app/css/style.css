@@ -417,6 +417,55 @@ header h1 {
     cursor: not-allowed;
 }
 
+/* お気に入りボタン */
+.bookmark-section {
+    margin-top: 10px;
+}
+
+.btn-bookmark {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: #fff;
+    width: 100%;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-bookmark:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(243, 156, 18, 0.4);
+}
+
+.btn-bookmark:disabled {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.4);
+    cursor: not-allowed;
+}
+
+/* お気に入りトグルボタン（問題画面） */
+.btn-bookmark-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: all 0.2s ease;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-bookmark-toggle:hover {
+    transform: scale(1.2);
+}
+
+.btn-bookmark-toggle.active {
+    color: #f39c12;
+    text-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
+}
+
 /* 苦手カテゴリ */
 .weak-section {
     margin-top: 30px;

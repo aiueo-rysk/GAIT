@@ -43,12 +43,17 @@ class QuizApp {
             if (!this.storageData.examHistory) {
                 this.storageData.examHistory = [];
             }
+            // bookmarksがない場合は追加
+            if (!this.storageData.bookmarks) {
+                this.storageData.bookmarks = [];
+            }
         } else {
             this.storageData = {
                 history: [],
                 wrongQuestions: [],
                 categoryStats: {},
-                examHistory: []
+                examHistory: [],
+                bookmarks: []
             };
         }
     }
@@ -97,6 +102,14 @@ class QuizApp {
         if (reviewBtn) {
             reviewBtn.disabled = wrongCount === 0;
             reviewBtn.textContent = wrongCount > 0 ? `復習する (${wrongCount}問)` : '復習する問題なし';
+        }
+
+        // お気に入りボタンの状態を更新
+        const bookmarkCount = this.storageData.bookmarks.length;
+        const bookmarkBtn = document.getElementById('btn-bookmark-quiz');
+        if (bookmarkBtn) {
+            bookmarkBtn.disabled = bookmarkCount === 0;
+            bookmarkBtn.textContent = bookmarkCount > 0 ? `お気に入りから出題 (${bookmarkCount}問)` : 'お気に入りから出題';
         }
 
         // 苦手カテゴリを表示
@@ -167,6 +180,57 @@ class QuizApp {
         // ダッシュボード用
         document.getElementById('btn-dashboard').addEventListener('click', () => this.showDashboard());
         document.getElementById('btn-dashboard-back').addEventListener('click', () => this.goHome());
+
+        // お気に入り用
+        document.getElementById('btn-bookmark').addEventListener('click', () => this.toggleBookmark());
+        document.getElementById('btn-bookmark-quiz').addEventListener('click', () => this.startBookmarkQuiz());
+    }
+
+    // お気に入りをトグル
+    toggleBookmark() {
+        const question = this.currentQuestions[this.currentIndex];
+        const qId = question.id;
+        const idx = this.storageData.bookmarks.indexOf(qId);
+
+        if (idx === -1) {
+            this.storageData.bookmarks.push(qId);
+        } else {
+            this.storageData.bookmarks.splice(idx, 1);
+        }
+
+        this.saveStorageData();
+        this.updateBookmarkButton();
+    }
+
+    // ブックマークボタンの表示を更新
+    updateBookmarkButton() {
+        const question = this.currentQuestions[this.currentIndex];
+        const btn = document.getElementById('btn-bookmark');
+        const isBookmarked = this.storageData.bookmarks.includes(question.id);
+
+        btn.textContent = isBookmarked ? '★' : '☆';
+        btn.classList.toggle('active', isBookmarked);
+    }
+
+    // お気に入りから出題
+    startBookmarkQuiz() {
+        const bookmarkIds = this.storageData.bookmarks;
+        if (bookmarkIds.length === 0) {
+            alert('お気に入りの問題がありません');
+            return;
+        }
+
+        this.currentQuestions = this.questions.filter(q => bookmarkIds.includes(q.id));
+        this.currentQuestions = this.shuffleArray(this.currentQuestions);
+        this.isRandom = true;
+        this.isReviewMode = false;
+        this.isExamMode = false;
+        this.currentIndex = 0;
+        this.score = 0;
+        this.answers = [];
+
+        this.showScreen('quiz-screen');
+        this.showQuestion();
     }
 
     // ダッシュボード表示
@@ -610,6 +674,15 @@ class QuizApp {
 
         // 結果エリアを隠す
         document.getElementById('result-area').classList.add('hidden');
+
+        // お気に入りボタンを更新（模擬試験モードでは非表示）
+        const bookmarkBtn = document.getElementById('btn-bookmark');
+        if (this.isExamMode) {
+            bookmarkBtn.classList.add('hidden');
+        } else {
+            bookmarkBtn.classList.remove('hidden');
+            this.updateBookmarkButton();
+        }
     }
 
     selectAnswer(selectedIndex) {
