@@ -356,6 +356,151 @@ header h1 {
     justify-content: center;
 }
 
+/* 統計表示 */
+.stats-container {
+    margin-bottom: 30px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.stat-item {
+    background: rgba(0, 212, 255, 0.15);
+    border-radius: 12px;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00d4ff;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+}
+
+/* 復習ボタン */
+.review-section {
+    margin-top: 20px;
+}
+
+.btn-review {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+    color: #fff;
+    width: 100%;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-review:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+}
+
+.btn-review:disabled {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.4);
+    cursor: not-allowed;
+}
+
+/* 苦手カテゴリ */
+.weak-section {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.weak-section h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.weak-categories {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.weak-category-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.weak-category-item:last-child {
+    border-bottom: none;
+}
+
+.weak-category-name {
+    width: 120px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.weak-category-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    margin: 0 10px;
+    overflow: hidden;
+}
+
+.weak-category-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff6b6b, #00ff88);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.weak-category-rate {
+    width: 45px;
+    text-align: right;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.no-data {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px;
+}
+
+/* データクリアボタン */
+.clear-data {
+    margin-top: 30px;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 5px;
+}
+
+.btn-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 /* レスポンシブ */
 @media (max-width: 600px) {
     .container {
@@ -390,5 +535,23 @@ header h1 {
 
     .choice-btn {
         padding: 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .weak-category-name {
+        width: 100px;
+        font-size: 0.8rem;
     }
 }

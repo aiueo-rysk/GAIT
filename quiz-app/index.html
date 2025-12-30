@@ -15,6 +15,11 @@
         <!-- スタート画面 -->
         <div id="start-screen" class="screen">
             <div class="start-content">
+                <!-- 学習統計 -->
+                <div id="stats-container" class="stats-container">
+                    <!-- 統計がJSで動的に生成される -->
+                </div>
+
                 <h2>学習モードを選択</h2>
 
                 <div class="category-filter">
@@ -31,6 +36,22 @@
 
                 <div class="question-count">
                     <p>問題数: <span id="total-questions">0</span>問</p>
+                </div>
+
+                <div class="review-section">
+                    <button id="btn-review" class="btn btn-review" disabled>復習する問題なし</button>
+                </div>
+
+                <!-- 苦手カテゴリ -->
+                <div class="weak-section">
+                    <h3>カテゴリ別正答率</h3>
+                    <div id="weak-categories" class="weak-categories">
+                        <p class="no-data">まだデータがありません</p>
+                    </div>
+                </div>
+
+                <div class="clear-data">
+                    <button id="btn-clear-data" class="btn-link">学習履歴をリセット</button>
                 </div>
             </div>
         </div>
