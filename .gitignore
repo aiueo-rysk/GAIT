@@ -1,0 +1,21 @@
+# Claude Code
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+*.swp
+*.swo
+
+# Node.js
+node_modules/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
