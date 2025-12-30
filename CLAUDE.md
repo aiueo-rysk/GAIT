@@ -60,31 +60,33 @@ for /f "tokens=5" %a in ('netstat -ano ^| findstr :4000') do taskkill /PID %a /F
 1. `init()` → JSON読み込み、localStorage読み込み、UI初期化
 2. `startQuiz(random)` → カテゴリフィルター、シャッフル
 3. `showQuestion()` → 問題表示、選択肢生成
-4. `selectAnswer(index)` → 正誤判定、解説表示
+4. `selectAnswer(index)` → 正誤判定、解説表示（模擬試験モードでは即次へ）
 5. `showResults()` → スコア集計、データ保存
 
-**localStorage機能：**
-- `loadStorageData()` / `saveStorageData()` - データ永続化
-- `saveResults()` - 学習履歴・間違えた問題・カテゴリ統計を保存
-- `startReviewMode()` - 間違えた問題のみ出題
-- `updateStatsDisplay()` - 統計表示更新
+**学習モード：**
+- 通常モード：順番/ランダム出題、即時フィードバック
+- 復習モード：`startReviewMode()` - 間違えた問題のみ出題
+- お気に入りモード：`startBookmarkQuiz()` - ブックマークした問題のみ
+- 模擬試験モード：`startExam(type)` - GAIT2.0(160問/60分) / e-GAIT2.0(80問/30分)
 
-**データ構造（localStorage）：**
+**データ構造（localStorage キー: `gait_quiz_data`）：**
 ```javascript
 {
   history: [{ date, correct, total, isReview }],
   wrongQuestions: [questionId, ...],
-  categoryStats: { "カテゴリ名": { correct, total } }
+  categoryStats: { "カテゴリ名": { correct, total } },
+  examHistory: [{ date, type, score, rank, correct, total }],
+  bookmarks: [questionId, ...]
 }
 ```
 
 ## Adding Questions
 
-`quiz-app/data/questions.json`に追加：
+`quiz-app/data/questions.json`に追加（現在80問、id 1-80）：
 
 ```json
 {
-  "id": 16,
+  "id": 81,
   "category": "カテゴリ名",
   "question": "問題文？",
   "choices": ["選択肢A", "選択肢B", "選択肢C", "選択肢D"],
@@ -94,8 +96,8 @@ for /f "tokens=5" %a in ('netstat -ano ^| findstr :4000') do taskkill /PID %a /F
 ```
 
 - `answer`: 正解インデックス（0=A, 1=B, 2=C, 3=D）
-- `category`: 自由に追加可能（UIのフィルターに自動反映）
-- `id`: 一意であること（連番管理）
+- `category`: 8カテゴリ（インフラストラクチャ、OS・ミドルウェア、データベース、アプリケーション、クラウド、セキュリティ、DX技術、DX利活用）
+- `id`: 一意であること（連番管理、次は81から）
 
 ## Adding Documentation
 
