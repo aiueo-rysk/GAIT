@@ -1,14 +1,29 @@
-# GAIT試験 練習問題アプリ
+# GAIT試験 学習サイト
 
-GAIT（Global Assessment of Information Technology）試験対策用の4択クイズWebアプリケーションです。
+GAIT（Global Assessment of Information Technology）試験対策用の学習サイトです。
+
+## サイト構成
+
+| サイト | URL | 説明 |
+|--------|-----|------|
+| クイズアプリ | http://localhost:3000 | 4択問題で実践練習 |
+| ドキュメント | http://localhost:4000 | 試験情報・学習資料 |
 
 ## 機能
 
+### クイズアプリ
 - **カテゴリ別学習** - 7つの技術分野から選択して学習可能
 - **2つの出題モード** - 順番/ランダム出題を選択
 - **即時フィードバック** - 回答後すぐに正誤と解説を表示
-- **成績分析** - カテゴリ別の正答率をグラフで表示
+- **学習履歴** - ローカルストレージで学習回数・正答率を記録
+- **復習モード** - 間違えた問題だけを出題
+- **苦手分析** - カテゴリ別の正答率をグラフ表示
 - **レスポンシブ対応** - PC・スマートフォンどちらでも利用可能
+
+### ドキュメントサイト
+- **Docsify** による軽量ドキュメントサイト
+- サイドバーナビゲーション
+- 全文検索機能
 
 ## カテゴリ（GAIT2.0準拠）
 
@@ -25,46 +40,46 @@ GAIT（Global Assessment of Information Technology）試験対策用の4択ク�
 
 ### 必要環境
 
-- Node.js（npx使用）または Python 3.x
+- Node.js（npx使用）
 
 ### 起動方法
 
 ```bash
-# Node.jsの場合
+# クイズアプリ
 npx serve quiz-app -p 3000
 
-# Pythonの場合
-cd quiz-app
-python -m http.server 3000
+# ドキュメントサイト
+npx serve docs -p 4000
 ```
-
-ブラウザで http://localhost:3000 にアクセス
 
 ### 停止方法
 
 起動中のターミナルで `Ctrl + C` を押すか、別ターミナルから以下を実行：
 
 ```cmd
-# Windows（コマンドプロンプト）
+# クイズアプリ停止（Windows）
 for /f "tokens=5" %a in ('netstat -ano ^| findstr :3000') do taskkill /PID %a /F
+
+# ドキュメント停止（Windows）
+for /f "tokens=5" %a in ('netstat -ano ^| findstr :4000') do taskkill /PID %a /F
 ```
 
 ```bash
 # Mac / Linux
 kill $(lsof -t -i:3000)
+kill $(lsof -t -i:4000)
 ```
 
 ### VSCode タスク
 
-VSCodeでは `Ctrl + Shift + P` → `Tasks: Run Task` から起動・停止が可能です。
+`Ctrl + Shift + P` → `Tasks: Run Task` から実行：
 
-## 使い方
-
-1. トップ画面でカテゴリを選択（全カテゴリも可）
-2. 「順番に解く」または「ランダムに解く」を選択
-3. 4つの選択肢から回答を選択
-4. 解説を確認して「次の問題へ」
-5. 全問終了後、成績を確認
+| タスク | 説明 |
+|--------|------|
+| Start Quiz App | クイズアプリ起動（:3000） |
+| Stop Quiz App | クイズアプリ停止 |
+| Start Docs | ドキュメント起動（:4000） |
+| Stop Docs | ドキュメント停止 |
 
 ## 問題の追加
 
@@ -103,24 +118,28 @@ GAIT/
 ├── CLAUDE.md
 ├── .gitignore
 ├── .vscode/
-│   └── tasks.json           # 起動・停止タスク
-├── docs/                    # 学習資料
+│   └── tasks.json
+├── docs/                        # ドキュメントサイト（Docsify）
+│   ├── index.html
+│   ├── README.md
+│   ├── _sidebar.md
+│   ├── .nojekyll
 │   └── GAIT試験調査結果.md
-└── quiz-app/                # Webアプリケーション
+└── quiz-app/                    # クイズアプリ
     ├── index.html
     ├── css/
     │   └── style.css
     ├── js/
     │   └── app.js
     └── data/
-        └── questions.json   # 問題データ
+        └── questions.json
 ```
 
 ## 技術スタック
 
-- HTML5 / CSS3 / JavaScript（ES6+）
+- **クイズアプリ**: HTML5 / CSS3 / JavaScript（ES6+）、localStorage
+- **ドキュメント**: Docsify
 - フレームワーク不使用（Vanilla JS）
-- ローカルWebサーバーで動作
 
 ## ライセンス
 

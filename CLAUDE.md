@@ -4,47 +4,79 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-GAIT試験（Global Assessment of Information Technology）の学習用4択クイズWebアプリケーション。フロントエンドのみで構成され、サーバーサイド不要。
+GAIT試験（Global Assessment of Information Technology）の学習サイト。クイズアプリとドキュメントサイトで構成。フロントエンドのみ、サーバーサイド不要。
 
 ## Development Commands
 
 ```bash
-# 開発サーバー起動（Node.js）
+# クイズアプリ起動
 npx serve quiz-app -p 3000
+
+# ドキュメントサイト起動
+npx serve docs -p 4000
 
 # 停止（Windows コマンドプロンプト）
 for /f "tokens=5" %a in ('netstat -ano ^| findstr :3000') do taskkill /PID %a /F
-
-# アクセスURL
-http://localhost:3000/
+for /f "tokens=5" %a in ('netstat -ano ^| findstr :4000') do taskkill /PID %a /F
 ```
 
-JSONファイルのfetchにWebサーバーが必要なため、ファイルを直接ブラウザで開くことは不可。
+| サイト | URL |
+|--------|-----|
+| クイズアプリ | http://localhost:3000 |
+| ドキュメント | http://localhost:4000 |
 
 ### VSCode タスク
 
 `.vscode/tasks.json` に定義済み。`Ctrl + Shift + P` → `Tasks: Run Task` から実行：
-- **Start Server** - サーバー起動
-- **Stop Server** - サーバー停止
+
+| タスク | 説明 |
+|--------|------|
+| Start Quiz App | クイズアプリ起動（:3000） |
+| Stop Quiz App | クイズアプリ停止 |
+| Start Docs | ドキュメント起動（:4000） |
+| Stop Docs | ドキュメント停止 |
 
 ## Architecture
 
 ### フォルダ構成
-- `docs/` - 学習資料・調査ドキュメント
-- `quiz-app/` - Webアプリケーション本体
+- `docs/` - Docsifyドキュメントサイト
+- `quiz-app/` - クイズWebアプリケーション
 
 ### quiz-app構成
 - `index.html` - 3画面（スタート、クイズ、結果）をシングルページで管理
 - `js/app.js` - `QuizApp`クラスが全ロジックを担当
 - `css/style.css` - レスポンシブ対応のダークテーマUI
-- `data/questions.json` - 問題データ（追加・編集はこのファイルのみ）
+- `data/questions.json` - 問題データ
 
-### QuizAppクラスの主要フロー
-1. `init()` → JSONから問題読み込み、カテゴリセレクト生成
-2. `startQuiz(random)` → カテゴリフィルター適用、シャッフル（任意）
-3. `showQuestion()` → 問題表示、選択肢ボタン生成
+### docs構成（Docsify）
+- `index.html` - Docsify設定・テーマ
+- `README.md` - トップページ
+- `_sidebar.md` - サイドバーナビゲーション
+- `*.md` - 各ドキュメントページ
+
+### QuizAppクラスの主要機能
+
+**クイズフロー：**
+1. `init()` → JSON読み込み、localStorage読み込み、UI初期化
+2. `startQuiz(random)` → カテゴリフィルター、シャッフル
+3. `showQuestion()` → 問題表示、選択肢生成
 4. `selectAnswer(index)` → 正誤判定、解説表示
-5. `showResults()` → スコア集計、カテゴリ別成績表示
+5. `showResults()` → スコア集計、データ保存
+
+**localStorage機能：**
+- `loadStorageData()` / `saveStorageData()` - データ永続化
+- `saveResults()` - 学習履歴・間違えた問題・カテゴリ統計を保存
+- `startReviewMode()` - 間違えた問題のみ出題
+- `updateStatsDisplay()` - 統計表示更新
+
+**データ構造（localStorage）：**
+```javascript
+{
+  history: [{ date, correct, total, isReview }],
+  wrongQuestions: [questionId, ...],
+  categoryStats: { "カテゴリ名": { correct, total } }
+}
+```
 
 ## Adding Questions
 
@@ -63,4 +95,9 @@ JSONファイルのfetchにWebサーバーが必要なため、ファイルを�
 
 - `answer`: 正解インデックス（0=A, 1=B, 2=C, 3=D）
 - `category`: 自由に追加可能（UIのフィルターに自動反映）
-- `id`: 一意であること（現在は連番管理）
+- `id`: 一意であること（連番管理）
+
+## Adding Documentation
+
+`docs/` 配下にMarkdownファイルを追加し、`docs/_sidebar.md` にリンクを追記。
+Docsifyはビルド不要で、ファイル追加後すぐに反映される。

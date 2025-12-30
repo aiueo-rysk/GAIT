@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>GAIT試験 学習ドキュメント</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="GAIT試験対策のための学習資料">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <!-- Docsify テーマ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    :root {
+      --theme-color: #00d4ff;
+    }
+    .sidebar {
+      background-color: #f8f9fa;
+    }
+    .sidebar-nav li a {
+      color: #333;
+    }
+    .sidebar-nav li a:hover {
+      color: #00d4ff;
+    }
+    .markdown-section h1 {
+      color: #1a1a2e;
+    }
+    .markdown-section h2 {
+      border-bottom: 2px solid #00d4ff;
+      padding-bottom: 8px;
+    }
+    .app-nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 10px 20px;
+    }
+    .app-nav a {
+      margin-left: 15px;
+      color: #00d4ff;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">読み込み中...</div>
+
+  <!-- ナビゲーション -->
+  <nav class="app-nav">
+    <a href="/quiz-app/" target="_blank">クイズアプリ</a>
+    <a href="https://github.com/" target="_blank">GitHub</a>
+  </nav>
+
+  <script>
+    window.$docsify = {
+      name: 'GAIT試験 学習ガイド',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      auto2top: true,
+      search: {
+        placeholder: '検索...',
+        noData: '見つかりませんでした',
+        paths: 'auto'
+      },
+      copyCode: {
+        buttonText: 'コピー',
+        successText: 'コピーしました'
+      },
+      pagination: {
+        previousText: '前へ',
+        nextText: '次へ',
+        crossChapter: true
+      },
+      // 日本語設定
+      formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}',
+      // カバーページなし
+      coverpage: false
+    }
+  </script>
+
+  <!-- Docsify 本体 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+
+  <!-- プラグイン -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+
+  <!-- シンタックスハイライト -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
+</body>
+</html>
