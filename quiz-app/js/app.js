@@ -39,11 +39,16 @@ class QuizApp {
         const data = localStorage.getItem(this.STORAGE_KEY);
         if (data) {
             this.storageData = JSON.parse(data);
+            // examHistoryがない場合は追加
+            if (!this.storageData.examHistory) {
+                this.storageData.examHistory = [];
+            }
         } else {
             this.storageData = {
                 history: [],
                 wrongQuestions: [],
-                categoryStats: {}
+                categoryStats: {},
+                examHistory: []
             };
         }
     }
@@ -158,6 +163,232 @@ class QuizApp {
         document.getElementById('btn-exam-back').addEventListener('click', () => this.goHome());
         document.getElementById('btn-start-gait2').addEventListener('click', () => this.startExam('gait2'));
         document.getElementById('btn-start-egait2').addEventListener('click', () => this.startExam('egait2'));
+
+        // ダッシュボード用
+        document.getElementById('btn-dashboard').addEventListener('click', () => this.showDashboard());
+        document.getElementById('btn-dashboard-back').addEventListener('click', () => this.goHome());
+    }
+
+    // ダッシュボード表示
+    showDashboard() {
+        this.showScreen('dashboard-screen');
+        this.renderDashboard();
+    }
+
+    // ダッシュボード描画
+    renderDashboard() {
+        this.renderDashboardStats();
+        this.renderHistoryChart();
+        this.renderCategoryAnalysis();
+        this.renderExamHistory();
+    }
+
+    // 総合統計を描画
+    renderDashboardStats() {
+        const container = document.getElementById('dashboard-stats');
+        const history = this.storageData.history;
+
+        // 総学習回数
+        const totalSessions = history.length;
+
+        // 総回答数
+        let totalQuestions = 0;
+        let totalCorrect = 0;
+        history.forEach(h => {
+            totalQuestions += h.total;
+            totalCorrect += h.correct;
+        });
+
+        // 総合正答率
+        const overallRate = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+
+        // 学習日数（ユニークな日付数）
+        const uniqueDays = new Set(history.map(h => h.date)).size;
+
+        // 連続学習日数を計算
+        const streak = this.calculateStreak();
+
+        // 復習待ち問題数
+        const wrongCount = this.storageData.wrongQuestions.length;
+
+        container.innerHTML = `
+            <div class="dashboard-stat-card">
+                <span class="dashboard-stat-value">${totalSessions}</span>
+                <span class="dashboard-stat-label">総学習回数</span>
+            </div>
+            <div class="dashboard-stat-card">
+                <span class="dashboard-stat-value">${totalQuestions}</span>
+                <span class="dashboard-stat-label">総回答数</span>
+            </div>
+            <div class="dashboard-stat-card">
+                <span class="dashboard-stat-value">${overallRate}%</span>
+                <span class="dashboard-stat-label">総合正答率</span>
+            </div>
+            <div class="dashboard-stat-card">
+                <span class="dashboard-stat-value">${uniqueDays}</span>
+                <span class="dashboard-stat-label">学習日数</span>
+            </div>
+            <div class="dashboard-stat-card highlight">
+                <span class="dashboard-stat-value">${streak}</span>
+                <span class="dashboard-stat-label">連続学習日数</span>
+            </div>
+            <div class="dashboard-stat-card ${wrongCount > 0 ? 'warning' : ''}">
+                <span class="dashboard-stat-value">${wrongCount}</span>
+                <span class="dashboard-stat-label">復習待ち</span>
+            </div>
+        `;
+    }
+
+    // 連続学習日数を計算
+    calculateStreak() {
+        const history = this.storageData.history;
+        if (history.length === 0) return 0;
+
+        const dates = [...new Set(history.map(h => h.date))].sort().reverse();
+        const today = new Date().toISOString().split('T')[0];
+        const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+
+        // 今日または昨日に学習していない場合は0
+        if (dates[0] !== today && dates[0] !== yesterday) return 0;
+
+        let streak = 1;
+        let currentDate = new Date(dates[0]);
+
+        for (let i = 1; i < dates.length; i++) {
+            const prevDate = new Date(currentDate);
+            prevDate.setDate(prevDate.getDate() - 1);
+            const expectedDate = prevDate.toISOString().split('T')[0];
+
+            if (dates[i] === expectedDate) {
+                streak++;
+                currentDate = prevDate;
+            } else {
+                break;
+            }
+        }
+
+        return streak;
+    }
+
+    // 学習履歴グラフを描画
+    renderHistoryChart() {
+        const container = document.getElementById('history-chart');
+        const history = this.storageData.history;
+
+        // 直近7日間のデータを集計
+        const days = [];
+        for (let i = 6; i >= 0; i--) {
+            const date = new Date(Date.now() - i * 86400000);
+            const dateStr = date.toISOString().split('T')[0];
+            const dayName = ['日', '月', '火', '水', '木', '金', '土'][date.getDay()];
+
+            const dayData = history.filter(h => h.date === dateStr);
+            const questions = dayData.reduce((sum, h) => sum + h.total, 0);
+            const correct = dayData.reduce((sum, h) => sum + h.correct, 0);
+
+            days.push({
+                date: dateStr,
+                dayName: dayName,
+                questions: questions,
+                correct: correct,
+                rate: questions > 0 ? Math.round((correct / questions) * 100) : 0
+            });
+        }
+
+        const maxQuestions = Math.max(...days.map(d => d.questions), 1);
+
+        container.innerHTML = `
+            <div class="chart-container">
+                ${days.map(day => `
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: ${(day.questions / maxQuestions) * 100}%">
+                            <span class="chart-value">${day.questions > 0 ? day.questions : ''}</span>
+                        </div>
+                        <span class="chart-label">${day.dayName}</span>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="chart-legend">
+                <span>回答数（直近7日間）</span>
+            </div>
+        `;
+    }
+
+    // カテゴリ別分析を描画
+    renderCategoryAnalysis() {
+        const container = document.getElementById('category-analysis');
+        const stats = this.storageData.categoryStats;
+        const categories = Object.keys(stats);
+
+        if (categories.length === 0) {
+            container.innerHTML = '<p class="no-data">まだデータがありません</p>';
+            return;
+        }
+
+        // 正答率でソート
+        const sorted = categories
+            .map(cat => ({
+                name: cat,
+                correct: stats[cat].correct,
+                total: stats[cat].total,
+                rate: Math.round((stats[cat].correct / stats[cat].total) * 100)
+            }))
+            .sort((a, b) => b.rate - a.rate);
+
+        container.innerHTML = sorted.map(cat => {
+            let status = '';
+            let statusClass = '';
+            if (cat.rate >= 80) { status = '習得済み'; statusClass = 'mastered'; }
+            else if (cat.rate >= 60) { status = '学習中'; statusClass = 'learning'; }
+            else { status = '要強化'; statusClass = 'weak'; }
+
+            return `
+                <div class="category-analysis-item">
+                    <div class="category-info">
+                        <span class="category-name">${cat.name}</span>
+                        <span class="category-status ${statusClass}">${status}</span>
+                    </div>
+                    <div class="category-progress">
+                        <div class="category-bar-container">
+                            <div class="category-bar-fill ${statusClass}" style="width: ${cat.rate}%"></div>
+                        </div>
+                        <span class="category-rate">${cat.rate}%</span>
+                    </div>
+                    <div class="category-detail">
+                        ${cat.correct}/${cat.total}問正解
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    // 模擬試験履歴を描画
+    renderExamHistory() {
+        const container = document.getElementById('exam-history');
+        const history = this.storageData.examHistory || [];
+
+        if (history.length === 0) {
+            container.innerHTML = '<p class="no-data">まだ模擬試験を受けていません</p>';
+            return;
+        }
+
+        container.innerHTML = history.slice(-5).reverse().map(exam => {
+            const config = this.examConfig[exam.type];
+            const typeName = exam.type === 'gait2' ? 'GAIT2.0' : 'e-GAIT2.0';
+
+            return `
+                <div class="exam-history-item">
+                    <div class="exam-history-info">
+                        <span class="exam-type">${typeName}</span>
+                        <span class="exam-date">${exam.date}</span>
+                    </div>
+                    <div class="exam-history-score">
+                        <span class="exam-score">${exam.score}点</span>
+                        <span class="exam-rank ${exam.rank.toLowerCase()}">${exam.rank}</span>
+                    </div>
+                </div>
+            `;
+        }).join('');
     }
 
     // 終了確認
@@ -502,6 +733,18 @@ class QuizApp {
             else if (estimatedScore >= 120) { rank = 'Bronze'; rankClass = 'bronze'; }
             else { rank = '-'; rankClass = ''; }
         }
+
+        // 模擬試験履歴に保存
+        const today = new Date().toISOString().split('T')[0];
+        this.storageData.examHistory.push({
+            date: today,
+            type: this.examType,
+            score: estimatedScore,
+            rank: rank,
+            correct: this.score,
+            total: total
+        });
+        this.saveStorageData();
 
         const examTypeName = this.examType === 'gait2' ? 'GAIT2.0' : 'e-GAIT2.0';
 

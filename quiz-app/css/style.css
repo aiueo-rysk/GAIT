@@ -778,3 +778,349 @@ header h1 {
         padding: 6px 12px;
     }
 }
+
+/* ダッシュボード */
+.dashboard-link {
+    margin-top: 20px;
+}
+
+.btn-dashboard {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: #fff;
+    width: 100%;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-dashboard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
+}
+
+.dashboard-content {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+    font-size: 1.5rem;
+    color: #3498db;
+}
+
+.dashboard-section {
+    margin-bottom: 30px;
+}
+
+.dashboard-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    border-left: 4px solid #3498db;
+    padding-left: 10px;
+}
+
+/* ダッシュボード統計カード */
+.dashboard-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.dashboard-stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.dashboard-stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.dashboard-stat-card.highlight {
+    background: rgba(52, 152, 219, 0.2);
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.dashboard-stat-card.warning {
+    background: rgba(255, 107, 107, 0.2);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.dashboard-stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.dashboard-stat-card.highlight .dashboard-stat-value {
+    color: #00d4ff;
+}
+
+.dashboard-stat-card.warning .dashboard-stat-value {
+    color: #ff6b6b;
+}
+
+.dashboard-stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+}
+
+/* 学習履歴グラフ */
+.history-chart {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 150px;
+    padding: 10px 0;
+}
+
+.chart-bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.chart-bar {
+    width: 30px;
+    background: linear-gradient(180deg, #3498db, #2980b9);
+    border-radius: 4px 4px 0 0;
+    min-height: 4px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    transition: height 0.3s ease;
+}
+
+.chart-value {
+    font-size: 0.75rem;
+    color: #fff;
+    margin-top: -20px;
+}
+
+.chart-label {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.chart-legend {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* カテゴリ別分析 */
+.category-analysis {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.category-analysis-item {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.category-analysis-item:last-child {
+    border-bottom: none;
+}
+
+.category-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.category-info .category-name {
+    font-weight: bold;
+}
+
+.category-status {
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+.category-status.mastered {
+    background: rgba(0, 255, 136, 0.2);
+    color: #00ff88;
+}
+
+.category-status.learning {
+    background: rgba(52, 152, 219, 0.2);
+    color: #3498db;
+}
+
+.category-status.weak {
+    background: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+}
+
+.category-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.category-bar-container {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.category-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.category-bar-fill.mastered {
+    background: linear-gradient(90deg, #00ff88, #00d4ff);
+}
+
+.category-bar-fill.learning {
+    background: linear-gradient(90deg, #3498db, #00d4ff);
+}
+
+.category-bar-fill.weak {
+    background: linear-gradient(90deg, #ff6b6b, #ff9f43);
+}
+
+.category-rate {
+    width: 50px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.category-detail {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* 模擬試験履歴 */
+.exam-history {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.exam-history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.exam-history-item:last-child {
+    border-bottom: none;
+}
+
+.exam-history-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.exam-type {
+    font-weight: bold;
+    color: #9b59b6;
+}
+
+.exam-date {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.exam-history-score {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.exam-score {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.exam-rank {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.exam-rank.gold {
+    background: rgba(255, 215, 0, 0.2);
+    color: #ffd700;
+}
+
+.exam-rank.silver {
+    background: rgba(192, 192, 192, 0.2);
+    color: #c0c0c0;
+}
+
+.exam-rank.bronze {
+    background: rgba(205, 127, 50, 0.2);
+    color: #cd7f32;
+}
+
+/* ダッシュボード レスポンシブ */
+@media (max-width: 600px) {
+    .dashboard-content {
+        padding: 20px;
+    }
+
+    .dashboard-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-stat-value {
+        font-size: 1.5rem;
+    }
+
+    .chart-container {
+        height: 120px;
+    }
+
+    .chart-bar {
+        width: 25px;
+    }
+
+    .category-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}

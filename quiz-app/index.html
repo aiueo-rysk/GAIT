@@ -54,8 +54,54 @@
                     </div>
                 </div>
 
+                <div class="dashboard-link">
+                    <button id="btn-dashboard" class="btn btn-dashboard">学習ダッシュボード</button>
+                </div>
+
                 <div class="clear-data">
                     <button id="btn-clear-data" class="btn-link">学習履歴をリセット</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ダッシュボード画面 -->
+        <div id="dashboard-screen" class="screen hidden">
+            <div class="dashboard-content">
+                <div class="dashboard-header">
+                    <h2>学習ダッシュボード</h2>
+                    <button id="btn-dashboard-back" class="btn-back">← 戻る</button>
+                </div>
+
+                <!-- 総合統計 -->
+                <div class="dashboard-section">
+                    <h3>総合統計</h3>
+                    <div id="dashboard-stats" class="dashboard-stats-grid">
+                        <!-- JSで動的生成 -->
+                    </div>
+                </div>
+
+                <!-- 学習履歴グラフ -->
+                <div class="dashboard-section">
+                    <h3>学習履歴（直近7日間）</h3>
+                    <div id="history-chart" class="history-chart">
+                        <!-- JSで動的生成 -->
+                    </div>
+                </div>
+
+                <!-- カテゴリ別分析 -->
+                <div class="dashboard-section">
+                    <h3>カテゴリ別習熟度</h3>
+                    <div id="category-analysis" class="category-analysis">
+                        <!-- JSで動的生成 -->
+                    </div>
+                </div>
+
+                <!-- 模擬試験履歴 -->
+                <div class="dashboard-section">
+                    <h3>模擬試験履歴</h3>
+                    <div id="exam-history" class="exam-history">
+                        <!-- JSで動的生成 -->
+                    </div>
                 </div>
             </div>
         </div>
