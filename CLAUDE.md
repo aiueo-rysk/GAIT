@@ -68,6 +68,12 @@ for /f "tokens=5" %a in ('netstat -ano ^| findstr :4000') do taskkill /PID %a /F
 - 復習モード：`startReviewMode()` - 間違えた問題のみ出題
 - お気に入りモード：`startBookmarkQuiz()` - ブックマークした問題のみ
 - 模擬試験モード：`startExam(type)` - GAIT2.0(160問/60分) / e-GAIT2.0(80問/30分)
+- 単問練習：`startSingleQuestion(id)` - 問題一覧から特定の問題を練習
+
+**問題一覧画面：**
+- `showQuestionList()` - 全問題をリスト表示
+- カテゴリ/出典でフィルタ、ID/正答率/回答数でソート
+- 問題ごとの正答率・回答履歴を表示
 
 **データ構造（localStorage キー: `gait_quiz_data`）：**
 ```javascript
@@ -76,7 +82,8 @@ for /f "tokens=5" %a in ('netstat -ano ^| findstr :4000') do taskkill /PID %a /F
   wrongQuestions: [questionId, ...],
   categoryStats: { "カテゴリ名": { correct, total } },
   examHistory: [{ date, type, score, rank, correct, total }],
-  bookmarks: [questionId, ...]
+  bookmarks: [questionId, ...],
+  questionStats: { "questionId": { correct, total, lastAnswered } }
 }
 ```
 

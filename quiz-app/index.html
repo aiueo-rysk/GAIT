@@ -60,6 +60,7 @@
 
                 <div class="dashboard-link">
                     <button id="btn-dashboard" class="btn btn-dashboard">学習ダッシュボード</button>
+                    <button id="btn-question-list" class="btn btn-question-list">問題一覧</button>
                 </div>
 
                 <div class="clear-data">
@@ -106,6 +107,43 @@
                     <div id="exam-history" class="exam-history">
                         <!-- JSで動的生成 -->
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 問題一覧画面 -->
+        <div id="question-list-screen" class="screen hidden">
+            <div class="question-list-content">
+                <div class="question-list-header">
+                    <h2>問題一覧</h2>
+                    <button id="btn-question-list-back" class="btn-back">← 戻る</button>
+                </div>
+
+                <div class="question-list-filters">
+                    <select id="filter-category">
+                        <option value="all">すべてのカテゴリ</option>
+                    </select>
+                    <select id="filter-source">
+                        <option value="all">すべての出典</option>
+                        <option value="original">オリジナル</option>
+                        <option value="official">公式</option>
+                        <option value="reference">参考</option>
+                    </select>
+                    <select id="sort-by">
+                        <option value="id">ID順</option>
+                        <option value="category">カテゴリ順</option>
+                        <option value="rate-asc">正答率（低い順）</option>
+                        <option value="rate-desc">正答率（高い順）</option>
+                        <option value="count">回答数順</option>
+                    </select>
+                </div>
+
+                <div class="question-list-summary">
+                    <span id="question-list-count">0問</span>
+                </div>
+
+                <div id="question-list-table" class="question-list-table">
+                    <!-- JSで動的生成 -->
                 </div>
             </div>
         </div>

@@ -47,13 +47,18 @@ class QuizApp {
             if (!this.storageData.bookmarks) {
                 this.storageData.bookmarks = [];
             }
+            // questionStatsがない場合は追加
+            if (!this.storageData.questionStats) {
+                this.storageData.questionStats = {};
+            }
         } else {
             this.storageData = {
                 history: [],
                 wrongQuestions: [],
                 categoryStats: {},
                 examHistory: [],
-                bookmarks: []
+                bookmarks: [],
+                questionStats: {}
             };
         }
     }
@@ -184,6 +189,13 @@ class QuizApp {
         // お気に入り用
         document.getElementById('btn-bookmark').addEventListener('click', () => this.toggleBookmark());
         document.getElementById('btn-bookmark-quiz').addEventListener('click', () => this.startBookmarkQuiz());
+
+        // 問題一覧用
+        document.getElementById('btn-question-list').addEventListener('click', () => this.showQuestionList());
+        document.getElementById('btn-question-list-back').addEventListener('click', () => this.goHome());
+        document.getElementById('filter-category').addEventListener('change', () => this.renderQuestionList());
+        document.getElementById('filter-source').addEventListener('change', () => this.renderQuestionList());
+        document.getElementById('sort-by').addEventListener('change', () => this.renderQuestionList());
     }
 
     // お気に入りをトグル
@@ -247,6 +259,137 @@ class QuizApp {
         this.currentQuestions = this.questions.filter(q => bookmarkIds.includes(q.id));
         this.currentQuestions = this.shuffleArray(this.currentQuestions);
         this.isRandom = true;
+        this.isReviewMode = false;
+        this.isExamMode = false;
+        this.currentIndex = 0;
+        this.score = 0;
+        this.answers = [];
+
+        this.showScreen('quiz-screen');
+        this.showQuestion();
+    }
+
+    // 問題一覧画面を表示
+    showQuestionList() {
+        this.showScreen('question-list-screen');
+        this.initQuestionListFilters();
+        this.renderQuestionList();
+    }
+
+    // 問題一覧のフィルターを初期化
+    initQuestionListFilters() {
+        const categorySelect = document.getElementById('filter-category');
+        // 既存のオプションをクリア（最初の「すべて」以外）
+        while (categorySelect.options.length > 1) {
+            categorySelect.remove(1);
+        }
+        // カテゴリを追加
+        const categories = this.getCategories();
+        categories.forEach(cat => {
+            const option = document.createElement('option');
+            option.value = cat;
+            option.textContent = cat;
+            categorySelect.appendChild(option);
+        });
+    }
+
+    // 問題一覧を描画
+    renderQuestionList() {
+        const categoryFilter = document.getElementById('filter-category').value;
+        const sourceFilter = document.getElementById('filter-source').value;
+        const sortBy = document.getElementById('sort-by').value;
+
+        // フィルタリング
+        let filtered = this.questions.filter(q => {
+            if (categoryFilter !== 'all' && q.category !== categoryFilter) return false;
+            if (sourceFilter !== 'all') {
+                const sourceType = q.source?.type || 'original';
+                if (sourceType !== sourceFilter) return false;
+            }
+            return true;
+        });
+
+        // ソート
+        filtered = this.sortQuestions(filtered, sortBy);
+
+        // 件数表示
+        document.getElementById('question-list-count').textContent = `${filtered.length}問`;
+
+        // テーブル描画
+        const container = document.getElementById('question-list-table');
+        if (filtered.length === 0) {
+            container.innerHTML = '<p class="no-data">該当する問題がありません</p>';
+            return;
+        }
+
+        const sourceLabels = { original: 'オリジナル', official: '公式', reference: '参考' };
+
+        container.innerHTML = filtered.map(q => {
+            const stats = this.storageData.questionStats[q.id] || { correct: 0, total: 0 };
+            const rate = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : null;
+            const rateClass = rate === null ? '' : rate >= 70 ? 'high' : rate >= 40 ? 'mid' : 'low';
+            const sourceType = q.source?.type || 'original';
+
+            return `
+                <div class="question-item" data-id="${q.id}">
+                    <span class="q-id">#${q.id}</span>
+                    <span class="q-category">${q.category}</span>
+                    <span class="q-text">${q.question}</span>
+                    <span class="q-source ${sourceType}">${sourceLabels[sourceType]}</span>
+                    <span class="q-stats">
+                        <span class="rate ${rateClass}">${rate !== null ? rate + '%' : '-'}</span>
+                        <span class="count">(${stats.correct}/${stats.total})</span>
+                    </span>
+                </div>
+            `;
+        }).join('');
+
+        // クリックイベントを設定
+        container.querySelectorAll('.question-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const id = parseInt(item.dataset.id);
+                this.startSingleQuestion(id);
+            });
+        });
+    }
+
+    // 問題をソート
+    sortQuestions(questions, sortBy) {
+        const stats = this.storageData.questionStats;
+        return [...questions].sort((a, b) => {
+            switch (sortBy) {
+                case 'id':
+                    return a.id - b.id;
+                case 'category':
+                    return a.category.localeCompare(b.category) || a.id - b.id;
+                case 'rate-asc': {
+                    const rateA = stats[a.id]?.total > 0 ? stats[a.id].correct / stats[a.id].total : -1;
+                    const rateB = stats[b.id]?.total > 0 ? stats[b.id].correct / stats[b.id].total : -1;
+                    return rateA - rateB;
+                }
+                case 'rate-desc': {
+                    const rateA = stats[a.id]?.total > 0 ? stats[a.id].correct / stats[a.id].total : -1;
+                    const rateB = stats[b.id]?.total > 0 ? stats[b.id].correct / stats[b.id].total : -1;
+                    return rateB - rateA;
+                }
+                case 'count': {
+                    const countA = stats[a.id]?.total || 0;
+                    const countB = stats[b.id]?.total || 0;
+                    return countB - countA;
+                }
+                default:
+                    return 0;
+            }
+        });
+    }
+
+    // 単問練習モード
+    startSingleQuestion(questionId) {
+        const question = this.questions.find(q => q.id === questionId);
+        if (!question) return;
+
+        this.currentQuestions = [question];
+        this.isRandom = false;
         this.isReviewMode = false;
         this.isExamMode = false;
         this.currentIndex = 0;
@@ -907,6 +1050,16 @@ class QuizApp {
             if (answer.correct) {
                 this.storageData.categoryStats[cat].correct++;
             }
+
+            // 問題別統計を更新
+            if (!this.storageData.questionStats[qId]) {
+                this.storageData.questionStats[qId] = { correct: 0, total: 0 };
+            }
+            this.storageData.questionStats[qId].total++;
+            if (answer.correct) {
+                this.storageData.questionStats[qId].correct++;
+            }
+            this.storageData.questionStats[qId].lastAnswered = today;
         });
 
         this.saveStorageData();
