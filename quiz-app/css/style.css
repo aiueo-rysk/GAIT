@@ -174,6 +174,28 @@ header h1 {
     font-size: 0.9rem;
 }
 
+.source-badge {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-left: 8px;
+}
+
+.source-badge.original {
+    background: rgba(100, 100, 100, 0.5);
+    color: #ccc;
+}
+
+.source-badge.official {
+    background: rgba(255, 193, 7, 0.3);
+    color: #ffc107;
+}
+
+.source-badge.reference {
+    background: rgba(156, 39, 176, 0.3);
+    color: #ce93d8;
+}
+
 .question-area {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;

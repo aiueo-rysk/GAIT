@@ -212,6 +212,30 @@ class QuizApp {
         btn.classList.toggle('active', isBookmarked);
     }
 
+    // 出典バッジの表示を更新
+    updateSourceBadge(question) {
+        const badge = document.getElementById('source-badge');
+        const source = question.source || { type: 'original' };
+
+        // クラスをリセット
+        badge.classList.remove('original', 'official', 'reference');
+        badge.classList.add(source.type);
+
+        // テキストを設定
+        const labels = {
+            original: 'オリジナル',
+            official: '公式',
+            reference: '参考'
+        };
+
+        let text = labels[source.type] || source.type;
+        if (source.name) {
+            text += `: ${source.name}`;
+        }
+        badge.textContent = text;
+        badge.title = source.url || '';
+    }
+
     // お気に入りから出題
     startBookmarkQuiz() {
         const bookmarkIds = this.storageData.bookmarks;
@@ -652,6 +676,9 @@ class QuizApp {
 
         // カテゴリ
         document.getElementById('category-badge').textContent = question.category;
+
+        // 出典
+        this.updateSourceBadge(question);
 
         // 問題文
         document.getElementById('question-text').textContent = question.question;

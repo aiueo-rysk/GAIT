@@ -11,7 +11,8 @@
         "最低2台のディスクで構成できる"
       ],
       "answer": 1,
-      "explanation": "RAID5はパリティ（誤り訂正符号）を各ディスクに分散配置し、1台のディスク障害時でもデータを復元できます。最低3台のディスクが必要です。"
+      "explanation": "RAID5はパリティ（誤り訂正符号）を各ディスクに分散配置し、1台のディスク障害時でもデータを復元できます。最低3台のディスクが必要です。",
+      "source": {"type": "original"}
     },
     {
       "id": 2,
@@ -24,7 +25,8 @@
         "アプリケーション層"
       ],
       "answer": 3,
-      "explanation": "HTTPはアプリケーション層で動作するプロトコルです。Webブラウザとサーバー間の通信に使用されます。"
+      "explanation": "HTTPはアプリケーション層で動作するプロトコルです。Webブラウザとサーバー間の通信に使用されます。",
+      "source": {"type": "original"}
     },
     {
       "id": 3,
@@ -37,7 +39,8 @@
         "ブリッジ"
       ],
       "answer": 2,
-      "explanation": "ルータはOSI参照モデルの第3層（ネットワーク層）で動作し、IPアドレスを基にルーティングを行います。"
+      "explanation": "ルータはOSI参照モデルの第3層（ネットワーク層）で動作し、IPアドレスを基にルーティングを行います。",
+      "source": {"type": "original"}
     },
     {
       "id": 4,
@@ -50,7 +53,8 @@
         "テープを使用したバックアップ装置"
       ],
       "answer": 1,
-      "explanation": "NAS（Network Attached Storage）はネットワーク経由でファイル単位のアクセスを提供するストレージです。DASは直接接続、SANはブロック単位です。"
+      "explanation": "NAS（Network Attached Storage）はネットワーク経由でファイル単位のアクセスを提供するストレージです。DASは直接接続、SANはブロック単位です。",
+      "source": {"type": "original"}
     },
     {
       "id": 5,
@@ -63,7 +67,8 @@
         "25"
       ],
       "answer": 1,
-      "explanation": "SSHはポート22を使用します。21はFTP、23はTelnet、25はSMTPです。"
+      "explanation": "SSHはポート22を使用します。21はFTP、23はTelnet、25はSMTPです。",
+      "source": {"type": "original"}
     },
     {
       "id": 6,
@@ -76,7 +81,8 @@
         "冗長性がなく高速性を重視する"
       ],
       "answer": 2,
-      "explanation": "RAID1はミラーリングと呼ばれ、同じデータを2台以上のディスクに複製します。1台が故障してもデータは保護されます。"
+      "explanation": "RAID1はミラーリングと呼ばれ、同じデータを2台以上のディスクに複製します。1台が故障してもデータは保護されます。",
+      "source": {"type": "original"}
     },
     {
       "id": 7,
@@ -89,7 +95,8 @@
         "191.168.1.1"
       ],
       "answer": 1,
-      "explanation": "プライベートIPアドレスは10.0.0.0/8、172.16.0.0/12、192.168.0.0/16の範囲です。192.168.1.1はクラスCのプライベートIPです。"
+      "explanation": "プライベートIPアドレスは10.0.0.0/8、172.16.0.0/12、192.168.0.0/16の範囲です。192.168.1.1はクラスCのプライベートIPです。",
+      "source": {"type": "original"}
     },
     {
       "id": 8,
@@ -102,7 +109,8 @@
         "(MTBF + MTTR) / MTBF"
       ],
       "answer": 2,
-      "explanation": "稼働率 = MTBF / (MTBF + MTTR)です。MTBFは平均故障間隔、MTTRは平均修復時間を表します。"
+      "explanation": "稼働率 = MTBF / (MTBF + MTTR)です。MTBFは平均故障間隔、MTTRは平均修復時間を表します。",
+      "source": {"type": "original"}
     },
     {
       "id": 9,
@@ -115,7 +123,8 @@
         "443"
       ],
       "answer": 1,
-      "explanation": "DNSはポート53を使用します。25はSMTP、80はHTTP、443はHTTPSです。"
+      "explanation": "DNSはポート53を使用します。25はSMTP、80はHTTP、443はHTTPSです。",
+      "source": {"type": "original"}
     },
     {
       "id": 10,
@@ -128,7 +137,8 @@
         "512"
       ],
       "answer": 0,
-      "explanation": "/24はホスト部が8ビットで256アドレスですが、ネットワークアドレスとブロードキャストを除くと254ホストが利用可能です。"
+      "explanation": "/24はホスト部が8ビットで256アドレスですが、ネットワークアドレスとブロードキャストを除くと254ホストが利用可能です。",
+      "source": {"type": "original"}
     },
     {
       "id": 11,
@@ -141,7 +151,8 @@
         "ls"
       ],
       "answer": 1,
-      "explanation": "chmodはファイルやディレクトリのアクセス権限（パーミッション）を変更するコマンドです。chownは所有者、chgrpはグループを変更します。"
+      "explanation": "chmodはファイルやディレクトリのアクセス権限（パーミッション）を変更するコマンドです。chownは所有者、chgrpはグループを変更します。",
+      "source": {"type": "original"}
     },
     {
       "id": 12,
@@ -154,7 +165,8 @@
         "ディレクトリサービス"
       ],
       "answer": 2,
-      "explanation": "Active Directoryは認証、グループポリシー、ディレクトリサービスを提供しますが、Webサーバーの負荷分散は別のソリューション（ロードバランサー等）で行います。"
+      "explanation": "Active Directoryは認証、グループポリシー、ディレクトリサービスを提供しますが、Webサーバーの負荷分散は別のソリューション（ロードバランサー等）で行います。",
+      "source": {"type": "original"}
     },
     {
       "id": 13,
@@ -167,7 +179,8 @@
         "/home"
       ],
       "answer": 1,
-      "explanation": "/etcディレクトリにはシステムの設定ファイルが格納されます。/binは基本コマンド、/varは可変データ、/homeはユーザーホームです。"
+      "explanation": "/etcディレクトリにはシステムの設定ファイルが格納されます。/binは基本コマンド、/varは可変データ、/homeはユーザーホームです。",
+      "source": {"type": "original"}
     },
     {
       "id": 14,
@@ -180,7 +193,8 @@
         "所有者：実行のみ、グループ：全権限、その他：全権限"
       ],
       "answer": 1,
-      "explanation": "755は所有者がrwx(7)、グループがr-x(5)、その他がr-x(5)を意味します。r=4,w=2,x=1です。"
+      "explanation": "755は所有者がrwx(7)、グループがr-x(5)、その他がr-x(5)を意味します。r=4,w=2,x=1です。",
+      "source": {"type": "original"}
     },
     {
       "id": 15,
@@ -193,7 +207,8 @@
         "MySQL"
       ],
       "answer": 3,
-      "explanation": "MySQLはデータベース管理システムです。Apache、Nginx、Tomcat（アプリケーションサーバーですがHTTPも処理可能）はWebサーバーです。"
+      "explanation": "MySQLはデータベース管理システムです。Apache、Nginx、Tomcat（アプリケーションサーバーですがHTTPも処理可能）はWebサーバーです。",
+      "source": {"type": "original"}
     },
     {
       "id": 16,
@@ -206,7 +221,8 @@
         "ls"
       ],
       "answer": 1,
-      "explanation": "topコマンドはCPU使用率やメモリ使用量などをリアルタイムで表示します。psはスナップショット、killはプロセス終了です。"
+      "explanation": "topコマンドはCPU使用率やメモリ使用量などをリアルタイムで表示します。psはスナップショット、killはプロセス終了です。",
+      "source": {"type": "original"}
     },
     {
       "id": 17,
@@ -219,7 +235,8 @@
         "FAT16"
       ],
       "answer": 2,
-      "explanation": "NTFSはファイル暗号化（EFS）、圧縮、アクセス権制御などの機能を持つWindowsの標準ファイルシステムです。"
+      "explanation": "NTFSはファイル暗号化（EFS）、圧縮、アクセス権制御などの機能を持つWindowsの標準ファイルシステムです。",
+      "source": {"type": "original"}
     },
     {
       "id": 18,
@@ -232,7 +249,8 @@
         "daemon"
       ],
       "answer": 1,
-      "explanation": "cronは指定した日時にコマンドやスクリプトを自動実行するスケジューラです。crontabコマンドで設定します。"
+      "explanation": "cronは指定した日時にコマンドやスクリプトを自動実行するスケジューラです。crontabコマンドで設定します。",
+      "source": {"type": "original"}
     },
     {
       "id": 19,
@@ -245,7 +263,8 @@
         "エクソカーネル"
       ],
       "answer": 1,
-      "explanation": "モノリシックカーネルは全ての機能を1つのカーネル空間で実行します。Linuxがその代表例です。"
+      "explanation": "モノリシックカーネルは全ての機能を1つのカーネル空間で実行します。Linuxがその代表例です。",
+      "source": {"type": "original"}
     },
     {
       "id": 20,
@@ -258,7 +277,8 @@
         "rpm"
       ],
       "answer": 1,
-      "explanation": "aptはDebian/Ubuntu系で使用されるパッケージ管理コマンドです。yum/dnfはRHEL/CentOS系、pacmanはArch系です。"
+      "explanation": "aptはDebian/Ubuntu系で使用されるパッケージ管理コマンドです。yum/dnfはRHEL/CentOS系、pacmanはArch系です。",
+      "source": {"type": "original"}
     },
     {
       "id": 21,
@@ -271,7 +291,8 @@
         "和（Union）"
       ],
       "answer": 1,
-      "explanation": "射影（Projection）は特定の列を取り出す操作です。選択（Selection）は特定の行を取り出す操作です。"
+      "explanation": "射影（Projection）は特定の列を取り出す操作です。選択（Selection）は特定の行を取り出す操作です。",
+      "source": {"type": "original"}
     },
     {
       "id": 22,
@@ -284,7 +305,8 @@
         "永続性（Durability）"
       ],
       "answer": 2,
-      "explanation": "ACID特性は原子性(A)、一貫性(C)、独立性(I:Isolation)、永続性(D)の4つです。可用性はACIDには含まれません。"
+      "explanation": "ACID特性は原子性(A)、一貫性(C)、独立性(I:Isolation)、永続性(D)の4つです。可用性はACIDには含まれません。",
+      "source": {"type": "original"}
     },
     {
       "id": 23,
@@ -297,7 +319,8 @@
         "結合従属性がないこと"
       ],
       "answer": 2,
-      "explanation": "第3正規形は第2正規形の条件に加え、推移関数従属がないことが条件です。"
+      "explanation": "第3正規形は第2正規形の条件に加え、推移関数従属がないことが条件です。",
+      "source": {"type": "original"}
     },
     {
       "id": 24,
@@ -310,7 +333,8 @@
         "UPDATE"
       ],
       "answer": 1,
-      "explanation": "CREATE TABLE文でテーブルを作成します。INSERTはデータ挿入、ALTERは構造変更、UPDATEはデータ更新です。"
+      "explanation": "CREATE TABLE文でテーブルを作成します。INSERTはデータ挿入、ALTERは構造変更、UPDATEはデータ更新です。",
+      "source": {"type": "original"}
     },
     {
       "id": 25,
@@ -323,7 +347,8 @@
         "両方のテーブルの全レコードを返す"
       ],
       "answer": 2,
-      "explanation": "INNER JOINは両方のテーブルで結合条件に一致するレコードのみを返します。"
+      "explanation": "INNER JOINは両方のテーブルで結合条件に一致するレコードのみを返します。",
+      "source": {"type": "original"}
     },
     {
       "id": 26,
@@ -336,7 +361,8 @@
         "グラフ型"
       ],
       "answer": 2,
-      "explanation": "リレーショナル型はRDBMSであり、NoSQLではありません。NoSQLにはキー・バリュー、ドキュメント、カラム指向、グラフ型があります。"
+      "explanation": "リレーショナル型はRDBMSであり、NoSQLではありません。NoSQLにはキー・バリュー、ドキュメント、カラム指向、グラフ型があります。",
+      "source": {"type": "original"}
     },
     {
       "id": 27,
@@ -349,7 +375,8 @@
         "UPDATE処理が高速になる"
       ],
       "answer": 2,
-      "explanation": "インデックスは検索（SELECT）を高速化しますが、INSERT/UPDATE/DELETEはインデックス更新のオーバーヘッドで遅くなることがあります。"
+      "explanation": "インデックスは検索（SELECT）を高速化しますが、INSERT/UPDATE/DELETEはインデックス更新のオーバーヘッドで遅くなることがあります。",
+      "source": {"type": "original"}
     },
     {
       "id": 28,
@@ -362,7 +389,8 @@
         "4個"
       ],
       "answer": 1,
-      "explanation": "CAP定理では、一貫性(C)、可用性(A)、分断耐性(P)のうち、同時に満たせるのは2つまでです。"
+      "explanation": "CAP定理では、一貫性(C)、可用性(A)、分断耐性(P)のうち、同時に満たせるのは2つまでです。",
+      "source": {"type": "original"}
     },
     {
       "id": 29,
@@ -375,7 +403,8 @@
         "LIMIT"
       ],
       "answer": 2,
-      "explanation": "HAVINGはGROUP BY後のグループに対する条件を指定します。WHEREはグループ化前の行に対する条件です。"
+      "explanation": "HAVINGはGROUP BY後のグループに対する条件を指定します。WHEREはグループ化前の行に対する条件です。",
+      "source": {"type": "original"}
     },
     {
       "id": 30,
@@ -388,7 +417,8 @@
         "インデックスが破損した状態"
       ],
       "answer": 1,
-      "explanation": "デッドロックは複数のトランザクションが互いにロックを保持しながら、相手のロック解放を待ち続ける状態です。"
+      "explanation": "デッドロックは複数のトランザクションが互いにロックを保持しながら、相手のロック解放を待ち続ける状態です。",
+      "source": {"type": "original"}
     },
     {
       "id": 31,
@@ -401,7 +431,8 @@
         "変更要求を受け付けない"
       ],
       "answer": 1,
-      "explanation": "アジャイル開発は短いイテレーション（スプリント）で開発を繰り返し、変化に柔軟に対応することを重視します。"
+      "explanation": "アジャイル開発は短いイテレーション（スプリント）で開発を繰り返し、変化に柔軟に対応することを重視します。",
+      "source": {"type": "original"}
     },
     {
       "id": 32,
@@ -414,7 +445,8 @@
         "必ずXML形式でデータを送受信"
       ],
       "answer": 3,
-      "explanation": "REST APIは一般的にJSONを使用することが多く、XML形式に限定されません。ステートレス通信とHTTPメソッド（GET, POST, PUT, DELETE等）の活用が特徴です。"
+      "explanation": "REST APIは一般的にJSONを使用することが多く、XML形式に限定されません。ステートレス通信とHTTPメソッド（GET, POST, PUT, DELETE等）の活用が特徴です。",
+      "source": {"type": "original"}
     },
     {
       "id": 33,
@@ -427,7 +459,8 @@
         "正規化"
       ],
       "answer": 3,
-      "explanation": "オブジェクト指向の三大要素はカプセル化、継承、ポリモーフィズムです。正規化はデータベース設計の概念です。"
+      "explanation": "オブジェクト指向の三大要素はカプセル化、継承、ポリモーフィズムです。正規化はデータベース設計の概念です。",
+      "source": {"type": "original"}
     },
     {
       "id": 34,
@@ -440,7 +473,8 @@
         "リソースの削除"
       ],
       "answer": 2,
-      "explanation": "PUTはリソースの更新（全体置換）に使用します。GETは取得、POSTは作成、DELETEは削除です。"
+      "explanation": "PUTはリソースの更新（全体置換）に使用します。GETは取得、POSTは作成、DELETEは削除です。",
+      "source": {"type": "original"}
     },
     {
       "id": 35,
@@ -453,7 +487,8 @@
         "選択ソート"
       ],
       "answer": 2,
-      "explanation": "マージソートの平均・最悪計算量はO(n log n)です。バブル、挿入、選択ソートはO(n²)です。"
+      "explanation": "マージソートの平均・最悪計算量はO(n log n)です。バブル、挿入、選択ソートはO(n²)です。",
+      "source": {"type": "original"}
     },
     {
       "id": 36,
@@ -466,7 +501,8 @@
         "git clone"
       ],
       "answer": 1,
-      "explanation": "git pullはfetch+mergeを行い、リモートの変更を取得してマージします。pushはアップロード、fetchは取得のみです。"
+      "explanation": "git pullはfetch+mergeを行い、リモートの変更を取得してマージします。pushはアップロード、fetchは取得のみです。",
+      "source": {"type": "original"}
     },
     {
       "id": 37,
@@ -479,7 +515,8 @@
         "コードレビューを行う"
       ],
       "answer": 1,
-      "explanation": "プロダクトオーナーはプロダクトバックログの管理と優先順位付けを担当します。障害除去はスクラムマスターの役割です。"
+      "explanation": "プロダクトオーナーはプロダクトバックログの管理と優先順位付けを担当します。障害除去はスクラムマスターの役割です。",
+      "source": {"type": "original"}
     },
     {
       "id": 38,
@@ -492,7 +529,8 @@
         "設計→実装→テスト"
       ],
       "answer": 1,
-      "explanation": "TDDは「レッド（テスト失敗）→グリーン（テスト成功）→リファクタリング」のサイクルで進めます。"
+      "explanation": "TDDは「レッド（テスト失敗）→グリーン（テスト成功）→リファクタリング」のサイクルで進めます。",
+      "source": {"type": "original"}
     },
     {
       "id": 39,
@@ -505,7 +543,8 @@
         "データベースへのアクセス"
       ],
       "answer": 2,
-      "explanation": "ControllerはユーザーからのリクエストNを受け取り、ModelとViewを適切に制御する役割を持ちます。"
+      "explanation": "ControllerはユーザーからのリクエストNを受け取り、ModelとViewを適切に制御する役割を持ちます。",
+      "source": {"type": "original"}
     },
     {
       "id": 40,
@@ -518,7 +557,8 @@
         "Customer Interface"
       ],
       "answer": 0,
-      "explanation": "CIはContinuous Integration（継続的インテグレーション）の略で、コードの変更を頻繁に統合し自動テストを行う手法です。"
+      "explanation": "CIはContinuous Integration（継続的インテグレーション）の略で、コードの変更を頻繁に統合し自動テストを行う手法です。",
+      "source": {"type": "original"}
     },
     {
       "id": 41,
@@ -531,7 +571,8 @@
         "すべて同じ"
       ],
       "answer": 2,
-      "explanation": "IaaS（Infrastructure as a Service）はインフラのみを提供するため、OS、ミドルウェア、アプリケーションはユーザーが管理します。管理範囲はIaaS > PaaS > SaaSの順です。"
+      "explanation": "IaaS（Infrastructure as a Service）はインフラのみを提供するため、OS、ミドルウェア、アプリケーションはユーザーが管理します。管理範囲はIaaS > PaaS > SaaSの順です。",
+      "source": {"type": "original"}
     },
     {
       "id": 42,
@@ -544,7 +585,8 @@
         "仮想マシンより起動が遅い"
       ],
       "answer": 2,
-      "explanation": "コンテナはホストOSのカーネルを共有するため、仮想マシンより軽量で起動が高速です。Dockerが代表的なコンテナ技術です。"
+      "explanation": "コンテナはホストOSのカーネルを共有するため、仮想マシンより軽量で起動が高速です。Dockerが代表的なコンテナ技術です。",
+      "source": {"type": "original"}
     },
     {
       "id": 43,
@@ -557,7 +599,8 @@
         "サーバーレス関数"
       ],
       "answer": 1,
-      "explanation": "EC2（Elastic Compute Cloud）はAWSの仮想サーバーサービスです。S3がストレージ、RDSがDB、Lambdaがサーバーレスです。"
+      "explanation": "EC2（Elastic Compute Cloud）はAWSの仮想サーバーサービスです。S3がストレージ、RDSがDB、Lambdaがサーバーレスです。",
+      "source": {"type": "original"}
     },
     {
       "id": 44,
@@ -570,7 +613,8 @@
         "Cluster"
       ],
       "answer": 1,
-      "explanation": "Podは1つ以上のコンテナをまとめたKubernetesの最小デプロイ単位です。"
+      "explanation": "Podは1つ以上のコンテナをまとめたKubernetesの最小デプロイ単位です。",
+      "source": {"type": "original"}
     },
     {
       "id": 45,
@@ -583,7 +627,8 @@
         "固定料金で課金される"
       ],
       "answer": 2,
-      "explanation": "サーバーレスはイベント駆動で実行され、実行時間に応じた従量課金となります。サーバー管理は不要です。"
+      "explanation": "サーバーレスはイベント駆動で実行され、実行時間に応じた従量課金となります。サーバー管理は不要です。",
+      "source": {"type": "original"}
     },
     {
       "id": 46,
@@ -596,7 +641,8 @@
         "ネットワークインフラの管理"
       ],
       "answer": 2,
-      "explanation": "IaaSではOS以上のレイヤー（OS、ミドルウェア、アプリケーション、データ）はユーザーの責任です。"
+      "explanation": "IaaSではOS以上のレイヤー（OS、ミドルウェア、アプリケーション、データ）はユーザーの責任です。",
+      "source": {"type": "original"}
     },
     {
       "id": 47,
@@ -609,7 +655,8 @@
         "マルチクラウド"
       ],
       "answer": 3,
-      "explanation": "マルチクラウドは複数のクラウドプロバイダー（AWS、Azure、GCP等）を組み合わせて利用する形態です。"
+      "explanation": "マルチクラウドは複数のクラウドプロバイダー（AWS、Azure、GCP等）を組み合わせて利用する形態です。",
+      "source": {"type": "original"}
     },
     {
       "id": 48,
@@ -622,7 +669,8 @@
         "Jenkins"
       ],
       "answer": 2,
-      "explanation": "TerraformはHashiCorp社のIaCツールで、インフラをコードで定義・管理できます。"
+      "explanation": "TerraformはHashiCorp社のIaCツールで、インフラをコードで定義・管理できます。",
+      "source": {"type": "original"}
     },
     {
       "id": 49,
@@ -635,7 +683,8 @@
         "ログをイベントストリームとして扱う"
       ],
       "answer": 2,
-      "explanation": "12 Factor Appにプログラミング言語の制限はありません。環境変数での設定、ステートレス、ログのストリーム化は含まれます。"
+      "explanation": "12 Factor Appにプログラミング言語の制限はありません。環境変数での設定、ステートレス、ログのストリーム化は含まれます。",
+      "source": {"type": "original"}
     },
     {
       "id": 50,
@@ -648,7 +697,8 @@
         "セキュリティの強化"
       ],
       "answer": 1,
-      "explanation": "CDNは世界中のエッジロケーションにコンテンツをキャッシュし、ユーザーに近い場所から配信することで高速化を実現します。"
+      "explanation": "CDNは世界中のエッジロケーションにコンテンツをキャッシュし、ユーザーに近い場所から配信することで高速化を実現します。",
+      "source": {"type": "original"}
     },
     {
       "id": 51,
@@ -661,7 +711,8 @@
         "鍵の配送問題が解決できない"
       ],
       "answer": 2,
-      "explanation": "公開鍵暗号方式では、公開鍵で暗号化し、対応する秘密鍵でのみ復号できます。鍵の配送問題を解決できますが、処理速度は共通鍵方式より遅いです。"
+      "explanation": "公開鍵暗号方式では、公開鍵で暗号化し、対応する秘密鍵でのみ復号できます。鍵の配送問題を解決できますが、処理速度は共通鍵方式より遅いです。",
+      "source": {"type": "original"}
     },
     {
       "id": 52,
@@ -674,7 +725,8 @@
         "パスワードの複雑化"
       ],
       "answer": 1,
-      "explanation": "プリペアドステートメント（パラメータ化クエリ）を使用することで、SQLインジェクション攻撃を効果的に防ぐことができます。"
+      "explanation": "プリペアドステートメント（パラメータ化クエリ）を使用することで、SQLインジェクション攻撃を効果的に防ぐことができます。",
+      "source": {"type": "original"}
     },
     {
       "id": 53,
@@ -687,7 +739,8 @@
         "信頼性（Reliability）"
       ],
       "answer": 3,
-      "explanation": "CIAは機密性(C)、完全性(I)、可用性(A)の3つです。信頼性は追加の要素として扱われることがあります。"
+      "explanation": "CIAは機密性(C)、完全性(I)、可用性(A)の3つです。信頼性は追加の要素として扱われることがあります。",
+      "source": {"type": "original"}
     },
     {
       "id": 54,
@@ -700,7 +753,8 @@
         "ICカードとスマートフォン"
       ],
       "answer": 1,
-      "explanation": "多要素認証は異なる種類の要素を組み合わせます。パスワード（知識）とOTP（所持）は異なる要素です。同種の要素の組み合わせは多要素認証になりません。"
+      "explanation": "多要素認証は異なる種類の要素を組み合わせます。パスワード（知識）とOTP（所持）は異なる要素です。同種の要素の組み合わせは多要素認証になりません。",
+      "source": {"type": "original"}
     },
     {
       "id": 55,
@@ -713,7 +767,8 @@
         "RAIDの導入"
       ],
       "answer": 0,
-      "explanation": "XSS対策として、出力時にHTMLエスケープ処理を行い、悪意のあるスクリプトが実行されないようにします。"
+      "explanation": "XSS対策として、出力時にHTMLエスケープ処理を行い、悪意のあるスクリプトが実行されないようにします。",
+      "source": {"type": "original"}
     },
     {
       "id": 56,
@@ -726,7 +781,8 @@
         "自己複製してネットワークを通じて拡散するマルウェア"
       ],
       "answer": 1,
-      "explanation": "ランサムウェアはデータを暗号化し、復号のために身代金（ランサム）を要求するマルウェアです。"
+      "explanation": "ランサムウェアはデータを暗号化し、復号のために身代金（ランサム）を要求するマルウェアです。",
+      "source": {"type": "original"}
     },
     {
       "id": 57,
@@ -739,7 +795,8 @@
         "デジタル署名アルゴリズム"
       ],
       "answer": 2,
-      "explanation": "SHA-256は256ビットのハッシュ値を生成する暗号学的ハッシュ関数です。改ざん検知やパスワードの保存などに使用されます。"
+      "explanation": "SHA-256は256ビットのハッシュ値を生成する暗号学的ハッシュ関数です。改ざん検知やパスワードの保存などに使用されます。",
+      "source": {"type": "original"}
     },
     {
       "id": 58,
@@ -752,7 +809,8 @@
         "ファイアウォールがあれば安全"
       ],
       "answer": 2,
-      "explanation": "ゼロトラストは「何も信頼しない」という前提で、すべてのアクセスを常に検証するセキュリティモデルです。"
+      "explanation": "ゼロトラストは「何も信頼しない」という前提で、すべてのアクセスを常に検証するセキュリティモデルです。",
+      "source": {"type": "original"}
     },
     {
       "id": 59,
@@ -765,7 +823,8 @@
         "認証情報を盗み取る"
       ],
       "answer": 1,
-      "explanation": "DDoS（Distributed Denial of Service）は多数のコンピュータから大量のリクエストを送り、サービスを利用不能にする攻撃です。"
+      "explanation": "DDoS（Distributed Denial of Service）は多数のコンピュータから大量のリクエストを送り、サービスを利用不能にする攻撃です。",
+      "source": {"type": "original"}
     },
     {
       "id": 60,
@@ -778,7 +837,8 @@
         "ウイルススキャンを行う"
       ],
       "answer": 1,
-      "explanation": "認証局（CA）は公開鍵の所有者を確認し、デジタル証明書を発行する役割を持ちます。"
+      "explanation": "認証局（CA）は公開鍵の所有者を確認し、デジタル証明書を発行する役割を持ちます。",
+      "source": {"type": "original"}
     },
     {
       "id": 61,
@@ -791,7 +851,8 @@
         "人間が逐一指示を与えながら学習する"
       ],
       "answer": 1,
-      "explanation": "教師あり学習は、正解ラベル（教師データ）付きのデータセットを使って学習する手法です。分類や回帰問題に使用されます。"
+      "explanation": "教師あり学習は、正解ラベル（教師データ）付きのデータセットを使って学習する手法です。分類や回帰問題に使用されます。",
+      "source": {"type": "original"}
     },
     {
       "id": 62,
@@ -804,7 +865,8 @@
         "クラスタコンピューティング"
       ],
       "answer": 1,
-      "explanation": "エッジコンピューティングは、データソースの近く（エッジ）で処理を行うことで、レイテンシの低減や帯域幅の節約を実現します。"
+      "explanation": "エッジコンピューティングは、データソースの近く（エッジ）で処理を行うことで、レイテンシの低減や帯域幅の節約を実現します。",
+      "source": {"type": "original"}
     },
     {
       "id": 63,
@@ -817,7 +879,8 @@
         "GAN"
       ],
       "answer": 1,
-      "explanation": "CNN（畳み込みニューラルネットワーク）は画像認識に特化したアーキテクチャです。RNN/LSTMは時系列データに適しています。"
+      "explanation": "CNN（畳み込みニューラルネットワーク）は画像認識に特化したアーキテクチャです。RNN/LSTMは時系列データに適しています。",
+      "source": {"type": "original"}
     },
     {
       "id": 64,
@@ -830,7 +893,8 @@
         "リアルタイム性がない"
       ],
       "answer": 1,
-      "explanation": "MQTTは軽量なPub/Sub（発行/購読）モデルのプロトコルで、IoTデバイスの通信に適しています。"
+      "explanation": "MQTTは軽量なPub/Sub（発行/購読）モデルのプロトコルで、IoTデバイスの通信に適しています。",
+      "source": {"type": "original"}
     },
     {
       "id": 65,
@@ -843,7 +907,8 @@
         "中央管理者が承認を行う"
       ],
       "answer": 1,
-      "explanation": "Proof of Work（PoW）は計算問題を解くことでブロックの承認権を得るコンセンサスアルゴリズムです。Bitcoinで使用されています。"
+      "explanation": "Proof of Work（PoW）は計算問題を解くことでブロックの承認権を得るコンセンサスアルゴリズムです。Bitcoinで使用されています。",
+      "source": {"type": "original"}
     },
     {
       "id": 66,
@@ -856,7 +921,8 @@
         "ResNet"
       ],
       "answer": 2,
-      "explanation": "BERTはTransformerアーキテクチャを採用した自然言語処理モデルです。AlexNet、VGG、ResNetは画像認識用のCNNモデルです。"
+      "explanation": "BERTはTransformerアーキテクチャを採用した自然言語処理モデルです。AlexNet、VGG、ResNetは画像認識用のCNNモデルです。",
+      "source": {"type": "original"}
     },
     {
       "id": 67,
@@ -869,7 +935,8 @@
         "ブロックチェーンによる契約の自動化"
       ],
       "answer": 1,
-      "explanation": "RPA（Robotic Process Automation）は、定型的なPC操作をソフトウェアロボットで自動化する技術です。"
+      "explanation": "RPA（Robotic Process Automation）は、定型的なPC操作をソフトウェアロボットで自動化する技術です。",
+      "source": {"type": "original"}
     },
     {
       "id": 68,
@@ -882,7 +949,8 @@
         "ルールベースで動作する"
       ],
       "answer": 1,
-      "explanation": "強化学習は環境との相互作用から得られる報酬を最大化するように学習する手法です。ゲームAIやロボット制御に使用されます。"
+      "explanation": "強化学習は環境との相互作用から得られる報酬を最大化するように学習する手法です。ゲームAIやロボット制御に使用されます。",
+      "source": {"type": "original"}
     },
     {
       "id": 69,
@@ -895,7 +963,8 @@
         "物理的な形を持つ"
       ],
       "answer": 1,
-      "explanation": "NFT（Non-Fungible Token）は唯一無二で代替不可能なデジタル資産を表すトークンです。デジタルアートなどに使用されます。"
+      "explanation": "NFT（Non-Fungible Token）は唯一無二で代替不可能なデジタル資産を表すトークンです。デジタルアートなどに使用されます。",
+      "source": {"type": "original"}
     },
     {
       "id": 70,
@@ -908,7 +977,8 @@
         "暗号鍵のペア"
       ],
       "answer": 1,
-      "explanation": "デジタルツインは物理世界の対象（機械、建物など）をデジタル空間に仮想的に再現し、シミュレーションや予測に活用する技術です。"
+      "explanation": "デジタルツインは物理世界の対象（機械、建物など）をデジタル空間に仮想的に再現し、シミュレーションや予測に活用する技術です。",
+      "source": {"type": "original"}
     },
     {
       "id": 71,
@@ -921,7 +991,8 @@
         "Value（価値）"
       ],
       "answer": 3,
-      "explanation": "ビッグデータの3VはVolume（データ量）、Velocity（生成・処理速度）、Variety（データの多様性）です。Valueは後から追加された概念です。"
+      "explanation": "ビッグデータの3VはVolume（データ量）、Velocity（生成・処理速度）、Variety（データの多様性）です。Valueは後から追加された概念です。",
+      "source": {"type": "original"}
     },
     {
       "id": 72,
@@ -934,7 +1005,8 @@
         "オフィスの内装"
       ],
       "answer": 3,
-      "explanation": "DXはビジネスモデル、業務プロセス、企業文化・風土などの変革を対象とします。物理的な内装は直接的なDXの対象ではありません。"
+      "explanation": "DXはビジネスモデル、業務プロセス、企業文化・風土などの変革を対象とします。物理的な内装は直接的なDXの対象ではありません。",
+      "source": {"type": "original"}
     },
     {
       "id": 73,
@@ -947,7 +1019,8 @@
         "KPIは財務指標、KGIは非財務指標"
       ],
       "answer": 0,
-      "explanation": "KGI（重要目標達成指標）が最終目標、KPI（重要業績評価指標）はKGIを達成するための中間指標です。"
+      "explanation": "KGI（重要目標達成指標）が最終目標、KPI（重要業績評価指標）はKGIを達成するための中間指標です。",
+      "source": {"type": "original"}
     },
     {
       "id": 74,
@@ -960,7 +1033,8 @@
         "製品の最終リリース"
       ],
       "answer": 1,
-      "explanation": "スプリントは1〜4週間程度の固定された開発サイクルです。各スプリントでリリース可能な成果物を作成します。"
+      "explanation": "スプリントは1〜4週間程度の固定された開発サイクルです。各スプリントでリリース可能な成果物を作成します。",
+      "source": {"type": "original"}
     },
     {
       "id": 75,
@@ -973,7 +1047,8 @@
         "コスト見積り"
       ],
       "answer": 1,
-      "explanation": "WBS（Work Breakdown Structure）は成果物や作業を階層的に分解した構造図で、プロジェクトの全体像を把握するのに使用します。"
+      "explanation": "WBS（Work Breakdown Structure）は成果物や作業を階層的に分解した構造図で、プロジェクトの全体像を把握するのに使用します。",
+      "source": {"type": "original"}
     },
     {
       "id": 76,
@@ -986,7 +1061,8 @@
         "発注者が作業を直接指示できる"
       ],
       "answer": 1,
-      "explanation": "請負契約は成果物の完成に対して報酬が支払われる契約形態で、ベンダーが完成責任を負います。"
+      "explanation": "請負契約は成果物の完成に対して報酬が支払われる契約形態で、ベンダーが完成責任を負います。",
+      "source": {"type": "original"}
     },
     {
       "id": 77,
@@ -999,7 +1075,8 @@
         "製品の量産"
       ],
       "answer": 1,
-      "explanation": "PoCは新しい概念や技術が実現可能かどうかを検証するための実証実験です。本格導入前に行います。"
+      "explanation": "PoCは新しい概念や技術が実現可能かどうかを検証するための実証実験です。本格導入前に行います。",
+      "source": {"type": "original"}
     },
     {
       "id": 78,
@@ -1012,7 +1089,8 @@
         "クラウドサービスの価格高騰"
       ],
       "answer": 1,
-      "explanation": "「2025年の崖」はレガシーシステムの老朽化・複雑化により、2025年以降に最大12兆円の経済損失が生じる可能性を指摘したものです。"
+      "explanation": "「2025年の崖」はレガシーシステムの老朽化・複雑化により、2025年以降に最大12兆円の経済損失が生じる可能性を指摘したものです。",
+      "source": {"type": "original"}
     },
     {
       "id": 79,
@@ -1025,7 +1103,8 @@
         "中国"
       ],
       "answer": 2,
-      "explanation": "GDPR（General Data Protection Regulation）はEUの一般データ保護規則で、個人データの保護を規定しています。"
+      "explanation": "GDPR（General Data Protection Regulation）はEUの一般データ保護規則で、個人データの保護を規定しています。",
+      "source": {"type": "original"}
     },
     {
       "id": 80,
@@ -1038,7 +1117,8 @@
         "大規模システムに最適"
       ],
       "answer": 1,
-      "explanation": "ローコード/ノーコード開発は、視覚的なインターフェースを使用し、最小限のコーディングでアプリケーションを開発できる手法です。"
+      "explanation": "ローコード/ノーコード開発は、視覚的なインターフェースを使用し、最小限のコーディングでアプリケーションを開発できる手法です。",
+      "source": {"type": "original"}
     }
   ]
 }

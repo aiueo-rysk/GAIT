@@ -91,13 +91,18 @@ for /f "tokens=5" %a in ('netstat -ano ^| findstr :4000') do taskkill /PID %a /F
   "question": "問題文？",
   "choices": ["選択肢A", "選択肢B", "選択肢C", "選択肢D"],
   "answer": 0,
-  "explanation": "解説文"
+  "explanation": "解説文",
+  "source": {"type": "original"}
 }
 ```
 
 - `answer`: 正解インデックス（0=A, 1=B, 2=C, 3=D）
 - `category`: 8カテゴリ（インフラストラクチャ、OS・ミドルウェア、データベース、アプリケーション、クラウド、セキュリティ、DX技術、DX利活用）
 - `id`: 一意であること（連番管理、次は81から）
+- `source`: 出典情報（UI表示される）
+  - `type`: `original`(オリジナル) / `official`(公式サンプル) / `reference`(参考サイト)
+  - `name`: 出典名（任意）
+  - `url`: 参考URL（任意、ツールチップ表示）
 
 ## Adding Documentation
 

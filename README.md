@@ -100,18 +100,28 @@ kill $(lsof -t -i:4000)
     "選択肢D"
   ],
   "answer": 0,
-  "explanation": "解説文をここに記載"
+  "explanation": "解説文をここに記載",
+  "source": {"type": "original"}
 }
 ```
 
 | フィールド | 説明 |
 |-----------|------|
 | id | 一意のID（連番、次は81から） |
-| category | カテゴリ名（8カテゴリ：インフラストラクチャ、OS・ミドルウェア、データベース、アプリケーション、クラウド、セキュリティ、DX技術、DX利活用） |
+| category | カテゴリ名（8カテゴリ） |
 | question | 問題文 |
 | choices | 選択肢の配列（4つ） |
 | answer | 正解のインデックス（0〜3） |
 | explanation | 解説文 |
+| source | 出典情報（下記参照） |
+
+### 出典（source）フィールド
+
+| type | 説明 | 追加フィールド |
+|------|------|---------------|
+| original | オリジナル問題 | - |
+| official | 公式サンプル問題 | name, url（任意） |
+| reference | 参考サイトから作成 | name, url（任意） |
 
 ## フォルダ構成
 
