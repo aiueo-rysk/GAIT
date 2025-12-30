@@ -35,6 +35,7 @@ class QuizApp {
         document.getElementById('btn-next').addEventListener('click', () => this.nextQuestion());
         document.getElementById('btn-retry').addEventListener('click', () => this.retryQuiz());
         document.getElementById('btn-home').addEventListener('click', () => this.goHome());
+        document.getElementById('btn-back').addEventListener('click', () => this.goHome());
         document.getElementById('category-select').addEventListener('change', () => this.updateQuestionCount());
     }
 

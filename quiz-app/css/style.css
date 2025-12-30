@@ -141,11 +141,30 @@ header h1 {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    gap: 15px;
+}
+
+.btn-back {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 #question-number {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.7);
+    flex: 1;
 }
 
 .category-badge {
