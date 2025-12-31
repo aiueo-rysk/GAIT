@@ -173,17 +173,25 @@ class QuizApp {
         document.getElementById('btn-retry').addEventListener('click', () => this.retryQuiz());
         document.getElementById('btn-home').addEventListener('click', () => this.goHome());
         document.getElementById('btn-back').addEventListener('click', () => this.confirmExit());
-        document.getElementById('btn-clear-data').addEventListener('click', () => this.clearData());
         document.getElementById('category-select').addEventListener('change', () => this.updateQuestionCount());
 
+        // ナビゲーションバー
+        document.getElementById('nav-home').addEventListener('click', () => this.goHome());
+        document.getElementById('nav-dashboard').addEventListener('click', () => this.showDashboard());
+        document.getElementById('nav-questions').addEventListener('click', () => this.showQuestionList());
+        document.getElementById('nav-exam').addEventListener('click', () => this.showExamSelect());
+        document.getElementById('nav-settings').addEventListener('click', () => this.showSettings());
+
+        // 設定画面
+        document.getElementById('btn-settings-back').addEventListener('click', () => this.goHome());
+        document.getElementById('btn-clear-data').addEventListener('click', () => this.clearData());
+
         // 模擬試験モード用
-        document.getElementById('btn-mock-exam').addEventListener('click', () => this.showExamSelect());
         document.getElementById('btn-exam-back').addEventListener('click', () => this.goHome());
         document.getElementById('btn-start-gait2').addEventListener('click', () => this.startExam('gait2'));
         document.getElementById('btn-start-egait2').addEventListener('click', () => this.startExam('egait2'));
 
         // ダッシュボード用
-        document.getElementById('btn-dashboard').addEventListener('click', () => this.showDashboard());
         document.getElementById('btn-dashboard-back').addEventListener('click', () => this.goHome());
 
         // お気に入り用
@@ -191,11 +199,27 @@ class QuizApp {
         document.getElementById('btn-bookmark-quiz').addEventListener('click', () => this.startBookmarkQuiz());
 
         // 問題一覧用
-        document.getElementById('btn-question-list').addEventListener('click', () => this.showQuestionList());
         document.getElementById('btn-question-list-back').addEventListener('click', () => this.goHome());
         document.getElementById('filter-category').addEventListener('change', () => this.renderQuestionList());
         document.getElementById('filter-source').addEventListener('change', () => this.renderQuestionList());
         document.getElementById('sort-by').addEventListener('change', () => this.renderQuestionList());
+    }
+
+    // 設定画面を表示
+    showSettings() {
+        this.showScreen('settings-screen');
+        this.updateNavigation('nav-settings');
+    }
+
+    // ナビゲーションのアクティブ状態を更新
+    updateNavigation(activeId) {
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        const activeBtn = document.getElementById(activeId);
+        if (activeBtn) {
+            activeBtn.classList.add('active');
+        }
     }
 
     // お気に入りをトグル
@@ -272,6 +296,7 @@ class QuizApp {
     // 問題一覧画面を表示
     showQuestionList() {
         this.showScreen('question-list-screen');
+        this.updateNavigation('nav-questions');
         this.initQuestionListFilters();
         this.renderQuestionList();
     }
@@ -403,6 +428,7 @@ class QuizApp {
     // ダッシュボード表示
     showDashboard() {
         this.showScreen('dashboard-screen');
+        this.updateNavigation('nav-dashboard');
         this.renderDashboard();
     }
 
@@ -637,6 +663,7 @@ class QuizApp {
     // 模擬試験選択画面を表示
     showExamSelect() {
         this.showScreen('exam-select-screen');
+        this.updateNavigation('nav-exam');
     }
 
     // 模擬試験を開始
@@ -733,14 +760,18 @@ class QuizApp {
 
     // データをクリア
     clearData() {
-        if (confirm('学習履歴をすべて削除しますか？')) {
+        if (confirm('学習履歴をすべて削除しますか？\nお気に入り、模擬試験履歴、問題別統計も削除されます。')) {
             this.storageData = {
                 history: [],
                 wrongQuestions: [],
-                categoryStats: {}
+                categoryStats: {},
+                examHistory: [],
+                bookmarks: [],
+                questionStats: {}
             };
             this.saveStorageData();
             this.updateStatsDisplay();
+            this.goHome();
         }
     }
 
@@ -1126,6 +1157,7 @@ class QuizApp {
         }
 
         this.showScreen('start-screen');
+        this.updateNavigation('nav-home');
         this.updateQuestionCount();
         this.updateStatsDisplay();
     }

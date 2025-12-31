@@ -10,6 +10,13 @@
     <div class="container">
         <header>
             <h1>GAIT試験 練習問題</h1>
+            <nav class="main-nav">
+                <button id="nav-home" class="nav-btn active" title="ホーム">🏠 ホーム</button>
+                <button id="nav-dashboard" class="nav-btn" title="ダッシュボード">📊 統計</button>
+                <button id="nav-questions" class="nav-btn" title="問題一覧">📋 問題一覧</button>
+                <button id="nav-exam" class="nav-btn" title="模擬試験">📝 模擬試験</button>
+                <button id="nav-settings" class="nav-btn" title="設定">⚙️ 設定</button>
+            </nav>
         </header>
 
         <!-- スタート画面 -->
@@ -38,16 +45,9 @@
                     <p>問題数: <span id="total-questions">0</span>問</p>
                 </div>
 
-                <div class="review-section">
-                    <button id="btn-review" class="btn btn-review" disabled>復習する問題なし</button>
-                </div>
-
-                <div class="bookmark-section">
-                    <button id="btn-bookmark-quiz" class="btn btn-bookmark" disabled>お気に入りから出題</button>
-                </div>
-
-                <div class="exam-section">
-                    <button id="btn-mock-exam" class="btn btn-exam">模擬試験モード</button>
+                <div class="sub-mode-buttons">
+                    <button id="btn-review" class="btn btn-sub" disabled>復習する問題なし</button>
+                    <button id="btn-bookmark-quiz" class="btn btn-sub" disabled>お気に入りから出題</button>
                 </div>
 
                 <!-- 苦手カテゴリ -->
@@ -57,14 +57,26 @@
                         <p class="no-data">まだデータがありません</p>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="dashboard-link">
-                    <button id="btn-dashboard" class="btn btn-dashboard">学習ダッシュボード</button>
-                    <button id="btn-question-list" class="btn btn-question-list">問題一覧</button>
+        <!-- 設定画面 -->
+        <div id="settings-screen" class="screen hidden">
+            <div class="settings-content">
+                <div class="settings-header">
+                    <h2>設定</h2>
+                    <button id="btn-settings-back" class="btn-back">← 戻る</button>
                 </div>
 
-                <div class="clear-data">
-                    <button id="btn-clear-data" class="btn-link">学習履歴をリセット</button>
+                <div class="settings-section">
+                    <h3>学習データ</h3>
+                    <div class="settings-card">
+                        <div class="settings-card-content">
+                            <p class="settings-card-title">学習履歴をリセット</p>
+                            <p class="settings-card-desc">学習履歴、正答率、お気に入りなどのデータをすべて削除します。</p>
+                        </div>
+                        <button id="btn-clear-data" class="btn btn-danger">リセット</button>
+                    </div>
                 </div>
             </div>
         </div>
