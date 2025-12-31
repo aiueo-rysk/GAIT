@@ -174,6 +174,7 @@ class QuizApp {
         document.getElementById('btn-home').addEventListener('click', () => this.goHome());
         document.getElementById('btn-back').addEventListener('click', () => this.confirmExit());
         document.getElementById('category-select').addEventListener('change', () => this.updateQuestionCount());
+        document.getElementById('difficulty-select').addEventListener('change', () => this.updateQuestionCount());
 
         // ナビゲーションバー
         document.getElementById('nav-home').addEventListener('click', () => this.goHome());
@@ -201,6 +202,7 @@ class QuizApp {
         // 問題一覧用
         document.getElementById('btn-question-list-back').addEventListener('click', () => this.goHome());
         document.getElementById('filter-category').addEventListener('change', () => this.renderQuestionList());
+        document.getElementById('filter-difficulty').addEventListener('change', () => this.renderQuestionList());
         document.getElementById('filter-source').addEventListener('change', () => this.renderQuestionList());
         document.getElementById('sort-by').addEventListener('change', () => this.renderQuestionList());
     }
@@ -272,6 +274,26 @@ class QuizApp {
         badge.title = source.url || '';
     }
 
+    // 難易度バッジの表示を更新
+    updateDifficultyBadge(question) {
+        const badge = document.getElementById('difficulty-badge');
+        const difficulty = question.difficulty || 2; // デフォルト: 中級
+
+        // クラスをリセット
+        badge.classList.remove('easy', 'medium', 'hard');
+
+        // 難易度に応じてクラスとテキストを設定
+        const config = {
+            1: { class: 'easy', label: '初級' },
+            2: { class: 'medium', label: '中級' },
+            3: { class: 'hard', label: '上級' }
+        };
+
+        const diffConfig = config[difficulty] || config[2];
+        badge.classList.add(diffConfig.class);
+        badge.textContent = diffConfig.label;
+    }
+
     // お気に入りから出題
     startBookmarkQuiz() {
         const bookmarkIds = this.storageData.bookmarks;
@@ -321,12 +343,14 @@ class QuizApp {
     // 問題一覧を描画
     renderQuestionList() {
         const categoryFilter = document.getElementById('filter-category').value;
+        const difficultyFilter = document.getElementById('filter-difficulty').value;
         const sourceFilter = document.getElementById('filter-source').value;
         const sortBy = document.getElementById('sort-by').value;
 
         // フィルタリング
         let filtered = this.questions.filter(q => {
             if (categoryFilter !== 'all' && q.category !== categoryFilter) return false;
+            if (difficultyFilter !== 'all' && String(q.difficulty || 2) !== difficultyFilter) return false;
             if (sourceFilter !== 'all') {
                 const sourceType = q.source?.type || 'original';
                 if (sourceType !== sourceFilter) return false;
@@ -348,18 +372,22 @@ class QuizApp {
         }
 
         const sourceLabels = { original: 'オリジナル', official: '公式', reference: '参考' };
+        const difficultyLabels = { 1: '初級', 2: '中級', 3: '上級' };
+        const difficultyClasses = { 1: 'easy', 2: 'medium', 3: 'hard' };
 
         container.innerHTML = filtered.map(q => {
             const stats = this.storageData.questionStats[q.id] || { correct: 0, total: 0 };
             const rate = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : null;
             const rateClass = rate === null ? '' : rate >= 70 ? 'high' : rate >= 40 ? 'mid' : 'low';
             const sourceType = q.source?.type || 'original';
+            const difficulty = q.difficulty || 2;
 
             return `
                 <div class="question-item" data-id="${q.id}">
                     <span class="q-id">#${q.id}</span>
                     <span class="q-category">${q.category}</span>
                     <span class="q-text">${q.question}</span>
+                    <span class="q-difficulty ${difficultyClasses[difficulty]}">${difficultyLabels[difficulty]}</span>
                     <span class="q-source ${sourceType}">${sourceLabels[sourceType]}</span>
                     <span class="q-stats">
                         <span class="rate ${rateClass}">${rate !== null ? rate + '%' : '-'}</span>
@@ -387,6 +415,8 @@ class QuizApp {
                     return a.id - b.id;
                 case 'category':
                     return a.category.localeCompare(b.category) || a.id - b.id;
+                case 'difficulty':
+                    return (a.difficulty || 2) - (b.difficulty || 2) || a.id - b.id;
                 case 'rate-asc': {
                     const rateA = stats[a.id]?.total > 0 ? stats[a.id].correct / stats[a.id].total : -1;
                     const rateB = stats[b.id]?.total > 0 ? stats[b.id].correct / stats[b.id].total : -1;
@@ -794,15 +824,17 @@ class QuizApp {
 
     updateQuestionCount() {
         const category = document.getElementById('category-select').value;
-        const filtered = this.getFilteredQuestions(category);
+        const difficulty = document.getElementById('difficulty-select').value;
+        const filtered = this.getFilteredQuestions(category, difficulty);
         document.getElementById('total-questions').textContent = filtered.length;
     }
 
-    getFilteredQuestions(category) {
-        if (category === 'all') {
-            return [...this.questions];
-        }
-        return this.questions.filter(q => q.category === category);
+    getFilteredQuestions(category, difficulty = 'all') {
+        return this.questions.filter(q => {
+            if (category !== 'all' && q.category !== category) return false;
+            if (difficulty !== 'all' && String(q.difficulty || 2) !== difficulty) return false;
+            return true;
+        });
     }
 
     shuffleArray(array) {
@@ -816,7 +848,8 @@ class QuizApp {
 
     startQuiz(random) {
         const category = document.getElementById('category-select').value;
-        this.currentQuestions = this.getFilteredQuestions(category);
+        const difficulty = document.getElementById('difficulty-select').value;
+        this.currentQuestions = this.getFilteredQuestions(category, difficulty);
 
         if (this.currentQuestions.length === 0) {
             alert('問題がありません');
@@ -850,6 +883,9 @@ class QuizApp {
 
         // カテゴリ
         document.getElementById('category-badge').textContent = question.category;
+
+        // 難易度
+        this.updateDifficultyBadge(question);
 
         // 出典
         this.updateSourceBadge(question);

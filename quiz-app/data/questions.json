@@ -12,7 +12,10 @@
       ],
       "answer": 1,
       "explanation": "RAID5はパリティ（誤り訂正符号）を各ディスクに分散配置し、1台のディスク障害時でもデータを復元できます。最低3台のディスクが必要です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 2,
@@ -26,7 +29,10 @@
       ],
       "answer": 3,
       "explanation": "HTTPはアプリケーション層で動作するプロトコルです。Webブラウザとサーバー間の通信に使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 3,
@@ -40,7 +46,10 @@
       ],
       "answer": 2,
       "explanation": "ルータはOSI参照モデルの第3層（ネットワーク層）で動作し、IPアドレスを基にルーティングを行います。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 4,
@@ -54,7 +63,10 @@
       ],
       "answer": 1,
       "explanation": "NAS（Network Attached Storage）はネットワーク経由でファイル単位のアクセスを提供するストレージです。DASは直接接続、SANはブロック単位です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 5,
@@ -68,7 +80,10 @@
       ],
       "answer": 1,
       "explanation": "SSHはポート22を使用します。21はFTP、23はTelnet、25はSMTPです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 6,
@@ -82,7 +97,10 @@
       ],
       "answer": 2,
       "explanation": "RAID1はミラーリングと呼ばれ、同じデータを2台以上のディスクに複製します。1台が故障してもデータは保護されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 7,
@@ -96,7 +114,10 @@
       ],
       "answer": 1,
       "explanation": "プライベートIPアドレスは10.0.0.0/8、172.16.0.0/12、192.168.0.0/16の範囲です。192.168.1.1はクラスCのプライベートIPです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 8,
@@ -110,7 +131,10 @@
       ],
       "answer": 2,
       "explanation": "稼働率 = MTBF / (MTBF + MTTR)です。MTBFは平均故障間隔、MTTRは平均修復時間を表します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 9,
@@ -124,7 +148,10 @@
       ],
       "answer": 1,
       "explanation": "DNSはポート53を使用します。25はSMTP、80はHTTP、443はHTTPSです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 10,
@@ -138,7 +165,10 @@
       ],
       "answer": 0,
       "explanation": "/24はホスト部が8ビットで256アドレスですが、ネットワークアドレスとブロードキャストを除くと254ホストが利用可能です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 11,
@@ -152,7 +182,10 @@
       ],
       "answer": 1,
       "explanation": "chmodはファイルやディレクトリのアクセス権限（パーミッション）を変更するコマンドです。chownは所有者、chgrpはグループを変更します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 12,
@@ -166,7 +199,10 @@
       ],
       "answer": 2,
       "explanation": "Active Directoryは認証、グループポリシー、ディレクトリサービスを提供しますが、Webサーバーの負荷分散は別のソリューション（ロードバランサー等）で行います。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 13,
@@ -180,7 +216,10 @@
       ],
       "answer": 1,
       "explanation": "/etcディレクトリにはシステムの設定ファイルが格納されます。/binは基本コマンド、/varは可変データ、/homeはユーザーホームです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 14,
@@ -194,7 +233,10 @@
       ],
       "answer": 1,
       "explanation": "755は所有者がrwx(7)、グループがr-x(5)、その他がr-x(5)を意味します。r=4,w=2,x=1です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 15,
@@ -208,7 +250,10 @@
       ],
       "answer": 3,
       "explanation": "MySQLはデータベース管理システムです。Apache、Nginx、Tomcat（アプリケーションサーバーですがHTTPも処理可能）はWebサーバーです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 16,
@@ -222,7 +267,10 @@
       ],
       "answer": 1,
       "explanation": "topコマンドはCPU使用率やメモリ使用量などをリアルタイムで表示します。psはスナップショット、killはプロセス終了です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 17,
@@ -236,7 +284,10 @@
       ],
       "answer": 2,
       "explanation": "NTFSはファイル暗号化（EFS）、圧縮、アクセス権制御などの機能を持つWindowsの標準ファイルシステムです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 18,
@@ -250,7 +301,10 @@
       ],
       "answer": 1,
       "explanation": "cronは指定した日時にコマンドやスクリプトを自動実行するスケジューラです。crontabコマンドで設定します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 19,
@@ -264,7 +318,10 @@
       ],
       "answer": 1,
       "explanation": "モノリシックカーネルは全ての機能を1つのカーネル空間で実行します。Linuxがその代表例です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 20,
@@ -278,7 +335,10 @@
       ],
       "answer": 1,
       "explanation": "aptはDebian/Ubuntu系で使用されるパッケージ管理コマンドです。yum/dnfはRHEL/CentOS系、pacmanはArch系です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 21,
@@ -292,7 +352,10 @@
       ],
       "answer": 1,
       "explanation": "射影（Projection）は特定の列を取り出す操作です。選択（Selection）は特定の行を取り出す操作です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 22,
@@ -306,7 +369,10 @@
       ],
       "answer": 2,
       "explanation": "ACID特性は原子性(A)、一貫性(C)、独立性(I:Isolation)、永続性(D)の4つです。可用性はACIDには含まれません。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 23,
@@ -320,7 +386,10 @@
       ],
       "answer": 2,
       "explanation": "第3正規形は第2正規形の条件に加え、推移関数従属がないことが条件です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 24,
@@ -334,7 +403,10 @@
       ],
       "answer": 1,
       "explanation": "CREATE TABLE文でテーブルを作成します。INSERTはデータ挿入、ALTERは構造変更、UPDATEはデータ更新です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 25,
@@ -348,7 +420,10 @@
       ],
       "answer": 2,
       "explanation": "INNER JOINは両方のテーブルで結合条件に一致するレコードのみを返します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 26,
@@ -362,7 +437,10 @@
       ],
       "answer": 2,
       "explanation": "リレーショナル型はRDBMSであり、NoSQLではありません。NoSQLにはキー・バリュー、ドキュメント、カラム指向、グラフ型があります。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 27,
@@ -376,7 +454,10 @@
       ],
       "answer": 2,
       "explanation": "インデックスは検索（SELECT）を高速化しますが、INSERT/UPDATE/DELETEはインデックス更新のオーバーヘッドで遅くなることがあります。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 28,
@@ -390,7 +471,10 @@
       ],
       "answer": 1,
       "explanation": "CAP定理では、一貫性(C)、可用性(A)、分断耐性(P)のうち、同時に満たせるのは2つまでです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 29,
@@ -404,7 +488,10 @@
       ],
       "answer": 2,
       "explanation": "HAVINGはGROUP BY後のグループに対する条件を指定します。WHEREはグループ化前の行に対する条件です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 30,
@@ -418,7 +505,10 @@
       ],
       "answer": 1,
       "explanation": "デッドロックは複数のトランザクションが互いにロックを保持しながら、相手のロック解放を待ち続ける状態です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 31,
@@ -432,7 +522,10 @@
       ],
       "answer": 1,
       "explanation": "アジャイル開発は短いイテレーション（スプリント）で開発を繰り返し、変化に柔軟に対応することを重視します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 32,
@@ -446,7 +539,10 @@
       ],
       "answer": 3,
       "explanation": "REST APIは一般的にJSONを使用することが多く、XML形式に限定されません。ステートレス通信とHTTPメソッド（GET, POST, PUT, DELETE等）の活用が特徴です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 33,
@@ -460,7 +556,10 @@
       ],
       "answer": 3,
       "explanation": "オブジェクト指向の三大要素はカプセル化、継承、ポリモーフィズムです。正規化はデータベース設計の概念です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 34,
@@ -474,7 +573,10 @@
       ],
       "answer": 2,
       "explanation": "PUTはリソースの更新（全体置換）に使用します。GETは取得、POSTは作成、DELETEは削除です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 35,
@@ -488,7 +590,10 @@
       ],
       "answer": 2,
       "explanation": "マージソートの平均・最悪計算量はO(n log n)です。バブル、挿入、選択ソートはO(n²)です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 36,
@@ -502,7 +607,10 @@
       ],
       "answer": 1,
       "explanation": "git pullはfetch+mergeを行い、リモートの変更を取得してマージします。pushはアップロード、fetchは取得のみです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 37,
@@ -516,7 +624,10 @@
       ],
       "answer": 1,
       "explanation": "プロダクトオーナーはプロダクトバックログの管理と優先順位付けを担当します。障害除去はスクラムマスターの役割です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 38,
@@ -530,7 +641,10 @@
       ],
       "answer": 1,
       "explanation": "TDDは「レッド（テスト失敗）→グリーン（テスト成功）→リファクタリング」のサイクルで進めます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 39,
@@ -544,7 +658,10 @@
       ],
       "answer": 2,
       "explanation": "ControllerはユーザーからのリクエストNを受け取り、ModelとViewを適切に制御する役割を持ちます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 40,
@@ -558,7 +675,10 @@
       ],
       "answer": 0,
       "explanation": "CIはContinuous Integration（継続的インテグレーション）の略で、コードの変更を頻繁に統合し自動テストを行う手法です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 41,
@@ -572,7 +692,10 @@
       ],
       "answer": 2,
       "explanation": "IaaS（Infrastructure as a Service）はインフラのみを提供するため、OS、ミドルウェア、アプリケーションはユーザーが管理します。管理範囲はIaaS > PaaS > SaaSの順です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 42,
@@ -586,7 +709,10 @@
       ],
       "answer": 2,
       "explanation": "コンテナはホストOSのカーネルを共有するため、仮想マシンより軽量で起動が高速です。Dockerが代表的なコンテナ技術です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 43,
@@ -600,7 +726,10 @@
       ],
       "answer": 1,
       "explanation": "EC2（Elastic Compute Cloud）はAWSの仮想サーバーサービスです。S3がストレージ、RDSがDB、Lambdaがサーバーレスです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 44,
@@ -614,7 +743,10 @@
       ],
       "answer": 1,
       "explanation": "Podは1つ以上のコンテナをまとめたKubernetesの最小デプロイ単位です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 45,
@@ -628,7 +760,10 @@
       ],
       "answer": 2,
       "explanation": "サーバーレスはイベント駆動で実行され、実行時間に応じた従量課金となります。サーバー管理は不要です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 46,
@@ -642,7 +777,10 @@
       ],
       "answer": 2,
       "explanation": "IaaSではOS以上のレイヤー（OS、ミドルウェア、アプリケーション、データ）はユーザーの責任です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 47,
@@ -656,7 +794,10 @@
       ],
       "answer": 3,
       "explanation": "マルチクラウドは複数のクラウドプロバイダー（AWS、Azure、GCP等）を組み合わせて利用する形態です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 48,
@@ -670,7 +811,10 @@
       ],
       "answer": 2,
       "explanation": "TerraformはHashiCorp社のIaCツールで、インフラをコードで定義・管理できます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 49,
@@ -684,7 +828,10 @@
       ],
       "answer": 2,
       "explanation": "12 Factor Appにプログラミング言語の制限はありません。環境変数での設定、ステートレス、ログのストリーム化は含まれます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 50,
@@ -698,7 +845,10 @@
       ],
       "answer": 1,
       "explanation": "CDNは世界中のエッジロケーションにコンテンツをキャッシュし、ユーザーに近い場所から配信することで高速化を実現します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 51,
@@ -712,7 +862,10 @@
       ],
       "answer": 2,
       "explanation": "公開鍵暗号方式では、公開鍵で暗号化し、対応する秘密鍵でのみ復号できます。鍵の配送問題を解決できますが、処理速度は共通鍵方式より遅いです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 52,
@@ -726,7 +879,10 @@
       ],
       "answer": 1,
       "explanation": "プリペアドステートメント（パラメータ化クエリ）を使用することで、SQLインジェクション攻撃を効果的に防ぐことができます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 3
     },
     {
       "id": 53,
@@ -740,7 +896,10 @@
       ],
       "answer": 3,
       "explanation": "CIAは機密性(C)、完全性(I)、可用性(A)の3つです。信頼性は追加の要素として扱われることがあります。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 54,
@@ -754,7 +913,10 @@
       ],
       "answer": 1,
       "explanation": "多要素認証は異なる種類の要素を組み合わせます。パスワード（知識）とOTP（所持）は異なる要素です。同種の要素の組み合わせは多要素認証になりません。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 55,
@@ -768,7 +930,10 @@
       ],
       "answer": 0,
       "explanation": "XSS対策として、出力時にHTMLエスケープ処理を行い、悪意のあるスクリプトが実行されないようにします。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 56,
@@ -782,7 +947,10 @@
       ],
       "answer": 1,
       "explanation": "ランサムウェアはデータを暗号化し、復号のために身代金（ランサム）を要求するマルウェアです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 57,
@@ -796,7 +964,10 @@
       ],
       "answer": 2,
       "explanation": "SHA-256は256ビットのハッシュ値を生成する暗号学的ハッシュ関数です。改ざん検知やパスワードの保存などに使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 58,
@@ -810,7 +981,10 @@
       ],
       "answer": 2,
       "explanation": "ゼロトラストは「何も信頼しない」という前提で、すべてのアクセスを常に検証するセキュリティモデルです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 59,
@@ -824,7 +998,10 @@
       ],
       "answer": 1,
       "explanation": "DDoS（Distributed Denial of Service）は多数のコンピュータから大量のリクエストを送り、サービスを利用不能にする攻撃です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 60,
@@ -838,7 +1015,10 @@
       ],
       "answer": 1,
       "explanation": "認証局（CA）は公開鍵の所有者を確認し、デジタル証明書を発行する役割を持ちます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 61,
@@ -852,7 +1032,10 @@
       ],
       "answer": 1,
       "explanation": "教師あり学習は、正解ラベル（教師データ）付きのデータセットを使って学習する手法です。分類や回帰問題に使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 62,
@@ -866,7 +1049,10 @@
       ],
       "answer": 1,
       "explanation": "エッジコンピューティングは、データソースの近く（エッジ）で処理を行うことで、レイテンシの低減や帯域幅の節約を実現します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 63,
@@ -880,7 +1066,10 @@
       ],
       "answer": 1,
       "explanation": "CNN（畳み込みニューラルネットワーク）は画像認識に特化したアーキテクチャです。RNN/LSTMは時系列データに適しています。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 3
     },
     {
       "id": 64,
@@ -894,7 +1083,10 @@
       ],
       "answer": 1,
       "explanation": "MQTTは軽量なPub/Sub（発行/購読）モデルのプロトコルで、IoTデバイスの通信に適しています。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 65,
@@ -908,7 +1100,10 @@
       ],
       "answer": 1,
       "explanation": "Proof of Work（PoW）は計算問題を解くことでブロックの承認権を得るコンセンサスアルゴリズムです。Bitcoinで使用されています。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 66,
@@ -922,7 +1117,10 @@
       ],
       "answer": 2,
       "explanation": "BERTはTransformerアーキテクチャを採用した自然言語処理モデルです。AlexNet、VGG、ResNetは画像認識用のCNNモデルです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 3
     },
     {
       "id": 67,
@@ -936,7 +1134,10 @@
       ],
       "answer": 1,
       "explanation": "RPA（Robotic Process Automation）は、定型的なPC操作をソフトウェアロボットで自動化する技術です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 68,
@@ -950,7 +1151,10 @@
       ],
       "answer": 1,
       "explanation": "強化学習は環境との相互作用から得られる報酬を最大化するように学習する手法です。ゲームAIやロボット制御に使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 69,
@@ -964,7 +1168,10 @@
       ],
       "answer": 1,
       "explanation": "NFT（Non-Fungible Token）は唯一無二で代替不可能なデジタル資産を表すトークンです。デジタルアートなどに使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 70,
@@ -978,7 +1185,10 @@
       ],
       "answer": 1,
       "explanation": "デジタルツインは物理世界の対象（機械、建物など）をデジタル空間に仮想的に再現し、シミュレーションや予測に活用する技術です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 71,
@@ -992,7 +1202,10 @@
       ],
       "answer": 3,
       "explanation": "ビッグデータの3VはVolume（データ量）、Velocity（生成・処理速度）、Variety（データの多様性）です。Valueは後から追加された概念です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 72,
@@ -1006,7 +1219,10 @@
       ],
       "answer": 3,
       "explanation": "DXはビジネスモデル、業務プロセス、企業文化・風土などの変革を対象とします。物理的な内装は直接的なDXの対象ではありません。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 73,
@@ -1020,7 +1236,10 @@
       ],
       "answer": 0,
       "explanation": "KGI（重要目標達成指標）が最終目標、KPI（重要業績評価指標）はKGIを達成するための中間指標です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 74,
@@ -1034,7 +1253,10 @@
       ],
       "answer": 1,
       "explanation": "スプリントは1〜4週間程度の固定された開発サイクルです。各スプリントでリリース可能な成果物を作成します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 75,
@@ -1048,7 +1270,10 @@
       ],
       "answer": 1,
       "explanation": "WBS（Work Breakdown Structure）は成果物や作業を階層的に分解した構造図で、プロジェクトの全体像を把握するのに使用します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 76,
@@ -1062,7 +1287,10 @@
       ],
       "answer": 1,
       "explanation": "請負契約は成果物の完成に対して報酬が支払われる契約形態で、ベンダーが完成責任を負います。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 77,
@@ -1076,7 +1304,10 @@
       ],
       "answer": 1,
       "explanation": "PoCは新しい概念や技術が実現可能かどうかを検証するための実証実験です。本格導入前に行います。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 78,
@@ -1090,7 +1321,10 @@
       ],
       "answer": 1,
       "explanation": "「2025年の崖」はレガシーシステムの老朽化・複雑化により、2025年以降に最大12兆円の経済損失が生じる可能性を指摘したものです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 79,
@@ -1104,7 +1338,10 @@
       ],
       "answer": 2,
       "explanation": "GDPR（General Data Protection Regulation）はEUの一般データ保護規則で、個人データの保護を規定しています。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 80,
@@ -1118,7 +1355,10 @@
       ],
       "answer": 1,
       "explanation": "ローコード/ノーコード開発は、視覚的なインターフェースを使用し、最小限のコーディングでアプリケーションを開発できる手法です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 81,
@@ -1132,7 +1372,10 @@
       ],
       "answer": 1,
       "explanation": "VLAN（Virtual LAN）は物理的な接続に関係なく、論理的にネットワークを分割する技術です。セキュリティ向上やブロードキャストドメインの分割に使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 82,
@@ -1146,7 +1389,10 @@
       ],
       "answer": 1,
       "explanation": "UPS（無停電電源装置）は停電時にバッテリーから電力を供給し、機器の安全なシャットダウンや継続稼働を可能にします。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 83,
@@ -1160,7 +1406,10 @@
       ],
       "answer": 2,
       "explanation": "RAID0はストライピングによりデータを分散書き込みするため高速ですが、冗長性がなく1台でも故障するとデータが失われます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 84,
@@ -1174,7 +1423,10 @@
       ],
       "answer": 2,
       "explanation": "IPv6アドレスは128ビットで、IPv4の32ビットに比べて大幅に拡張されています。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 85,
@@ -1188,7 +1440,10 @@
       ],
       "answer": 1,
       "explanation": "ロードバランサーは、複数のサーバーにトラフィックを分散させ、負荷を均等化し可用性を高める装置です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 86,
@@ -1202,7 +1457,10 @@
       ],
       "answer": 1,
       "explanation": "DHCP（Dynamic Host Configuration Protocol）は、ネットワーク機器にIPアドレスなどの設定を自動的に割り当てるプロトコルです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 87,
@@ -1216,7 +1474,10 @@
       ],
       "answer": 1,
       "explanation": "SANはブロック単位でアクセスする高速なストレージネットワークで、ファイバーチャネルやiSCSIで接続されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 88,
@@ -1230,7 +1491,10 @@
       ],
       "answer": 0,
       "explanation": "ARP（Address Resolution Protocol）は、IPアドレスから対応するMACアドレスを取得するプロトコルです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 89,
@@ -1244,7 +1508,10 @@
       ],
       "answer": 1,
       "explanation": "クラスBのプライベートIPアドレスは172.16.0.0～172.31.255.255です。10.x.x.xはクラスA、192.168.x.xはクラスCです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 90,
@@ -1258,7 +1525,10 @@
       ],
       "answer": 2,
       "explanation": "TCPはコネクション型で再送制御や順序制御を行い信頼性が高いです。UDPはコネクションレス型で高速ですが信頼性は低いです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 91,
@@ -1272,7 +1542,10 @@
       ],
       "answer": 1,
       "explanation": "HTTPSはポート443を使用します。ポート80はHTTP、8080と8443は代替ポートとして使用されることがあります。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 92,
@@ -1286,7 +1559,10 @@
       ],
       "answer": 1,
       "explanation": "NAT（Network Address Translation）は、プライベートIPアドレスとグローバルIPアドレスを相互変換する技術です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 93,
@@ -1300,7 +1576,10 @@
       ],
       "answer": 1,
       "explanation": "RAID6はパリティを2重に持つため、同時に2台のディスクが故障してもデータを復元できます。最低4台必要です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 94,
@@ -1314,7 +1593,10 @@
       ],
       "answer": 1,
       "explanation": "SMTPはポート25を使用するメール送信プロトコルです。110はPOP3、143はIMAPです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 95,
@@ -1328,7 +1610,10 @@
       ],
       "answer": 1,
       "explanation": "ホットスタンバイは予備系が常時稼働しており、障害発生時に即座に切り替わる方式です。高可用性を実現できます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 96,
@@ -1342,7 +1627,10 @@
       ],
       "answer": 1,
       "explanation": "chownはファイルやディレクトリの所有者を変更するコマンドです。chmodは権限、chgrpはグループを変更します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 97,
@@ -1356,7 +1644,10 @@
       ],
       "answer": 1,
       "explanation": "/var/logディレクトリにはシステムやアプリケーションのログファイルが格納されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 98,
@@ -1370,7 +1661,10 @@
       ],
       "answer": 2,
       "explanation": "スレッドは同一プロセス内でメモリ空間を共有します。プロセスは独立したメモリ空間を持ちます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 99,
@@ -1384,7 +1678,10 @@
       ],
       "answer": 1,
       "explanation": "pwdコマンドは現在の作業ディレクトリのパスを表示します。cdはディレクトリ移動、lsはファイル一覧です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 100,
@@ -1398,7 +1695,10 @@
       ],
       "answer": 1,
       "explanation": "仮想メモリはディスク領域を利用して物理メモリを拡張する仕組みです。スワップ領域として使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 101,
@@ -1412,7 +1712,10 @@
       ],
       "answer": 1,
       "explanation": "findコマンドはファイル名やディレクトリを検索します。grepはファイル内容を検索するコマンドです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 102,
@@ -1426,7 +1729,10 @@
       ],
       "answer": 1,
       "explanation": "systemdはLinuxのシステム・サービス管理デーモンで、起動処理やサービスの制御を行います。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 103,
@@ -1440,7 +1746,10 @@
       ],
       "answer": 0,
       "explanation": "644は所有者がrw-(6)、グループがr--(4)、その他がr--(4)を意味します。一般的なファイル権限です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 104,
@@ -1454,7 +1763,10 @@
       ],
       "answer": 1,
       "explanation": "RabbitMQはメッセージキューイングの代表的なミドルウェアです。非同期通信やシステム間連携に使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 105,
@@ -1468,7 +1780,10 @@
       ],
       "answer": 2,
       "explanation": "SIGKILL（シグナル9）はプロセスを強制終了するシグナルで、プロセスはこのシグナルを無視できません。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 106,
@@ -1482,7 +1797,10 @@
       ],
       "answer": 0,
       "explanation": "dfコマンドはファイルシステムのディスク使用量を表示します。duはディレクトリごとの使用量、freeはメモリ使用量です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 107,
@@ -1496,7 +1814,10 @@
       ],
       "answer": 1,
       "explanation": "LVM（Logical Volume Manager）は論理ボリュームを柔軟に作成・拡張・縮小できるディスク管理技術です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 108,
@@ -1510,7 +1831,10 @@
       ],
       "answer": 1,
       "explanation": "yum（およびdnf）はRHEL/CentOS系Linuxで使用されるパッケージ管理コマンドです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 109,
@@ -1524,7 +1848,10 @@
       ],
       "answer": 1,
       "explanation": "ip addrコマンドはネットワークインターフェースのIPアドレス設定を確認できます。従来のifconfigの代替です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 110,
@@ -1538,7 +1865,10 @@
       ],
       "answer": 1,
       "explanation": "リバースプロキシはサーバー側に配置され、クライアントからのリクエストを受けて背後のサーバーに転送します。負荷分散やSSL終端に使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 111,
@@ -1552,7 +1882,10 @@
       ],
       "answer": 2,
       "explanation": "主キーはテーブル内で各行を一意に識別するため、重複とNULL値は許容されません。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 112,
@@ -1566,7 +1899,10 @@
       ],
       "answer": 1,
       "explanation": "外部キーは他のテーブルの主キーを参照し、テーブル間の参照整合性を維持します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 113,
@@ -1580,7 +1916,10 @@
       ],
       "answer": 1,
       "explanation": "LEFT JOIN（LEFT OUTER JOIN）は左テーブルの全レコードを返し、右テーブルは一致するものがあれば結合、なければNULLになります。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 114,
@@ -1594,7 +1933,10 @@
       ],
       "answer": 0,
       "explanation": "ロック機構により、複数のトランザクションが同時に同じデータにアクセスする際の干渉を防ぎ、独立性を保証します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 115,
@@ -1608,7 +1950,10 @@
       ],
       "answer": 1,
       "explanation": "ビューは実際のテーブルに基づく仮想的なテーブルで、複雑なクエリの簡略化やセキュリティに使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 116,
@@ -1622,7 +1967,10 @@
       ],
       "answer": 1,
       "explanation": "MongoDBはJSONライクなドキュメントを格納するドキュメント指向のNoSQLデータベースです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 117,
@@ -1636,7 +1984,10 @@
       ],
       "answer": 1,
       "explanation": "DISTINCTは重複した行を除外し、一意の結果のみを返します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 118,
@@ -1650,7 +2001,10 @@
       ],
       "answer": 1,
       "explanation": "ストアドプロシージャはデータベースサーバー側で実行されるプログラムで、複雑な処理やトランザクション制御が可能です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 119,
@@ -1664,7 +2018,10 @@
       ],
       "answer": 1,
       "explanation": "マスター・スレーブレプリケーションはマスターノードで書き込みを行い、スレーブノードにデータを複製して読み取り負荷を分散します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 120,
@@ -1678,7 +2035,10 @@
       ],
       "answer": 1,
       "explanation": "B-treeインデックスは等価条件（=）や範囲検索（<, >, BETWEEN）に効果的です。前方一致以外のLIKEや全文検索には適しません。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 121,
@@ -1692,7 +2052,10 @@
       ],
       "answer": 1,
       "explanation": "Redisはインメモリ型のキー・バリューストアで、高速なデータアクセスが可能です。キャッシュやセッション管理に使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 122,
@@ -1706,7 +2069,10 @@
       ],
       "answer": 1,
       "explanation": "UNIONは重複行を除外して結合しますが、UNION ALLは重複を含めてすべての行を結合します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 123,
@@ -1720,7 +2086,10 @@
       ],
       "answer": 1,
       "explanation": "第2正規形は第1正規形を満たし、かつ部分関数従属がない（非キー属性が主キー全体に完全従属する）ことが条件です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 124,
@@ -1734,7 +2103,10 @@
       ],
       "answer": 1,
       "explanation": "楽観的ロックはロックを取得せず、更新時にバージョン番号やタイムスタンプで競合を検出します。同時実行性が高いです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 125,
@@ -1748,7 +2120,10 @@
       ],
       "answer": 1,
       "explanation": "シャーディングはデータを複数のデータベースに水平分割し、負荷分散とスケーラビリティを向上させる手法です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 126,
@@ -1762,7 +2137,10 @@
       ],
       "answer": 1,
       "explanation": "マイクロサービスは小さな独立したサービスの集合で、各サービスが独自のデータストアを持ち、独立してデプロイできます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 127,
@@ -1776,7 +2154,10 @@
       ],
       "answer": 1,
       "explanation": "Singletonパターンはクラスのインスタンスを1つに制限し、グローバルなアクセスポイントを提供するパターンです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 128,
@@ -1790,7 +2171,10 @@
       ],
       "answer": 2,
       "explanation": "404 Not Foundは要求されたリソースがサーバーに存在しないことを示すステータスコードです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 129,
@@ -1804,7 +2188,10 @@
       ],
       "answer": 1,
       "explanation": "SはSingle Responsibility Principle（単一責任の原則）で、クラスは1つの責任のみを持つべきという原則です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 130,
@@ -1818,7 +2205,10 @@
       ],
       "answer": 1,
       "explanation": "Docker Composeは複数のコンテナをYAMLファイルで定義し、一括して起動・管理するためのツールです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 131,
@@ -1832,7 +2222,10 @@
       ],
       "answer": 1,
       "explanation": "GraphQLはクライアントが必要なデータ構造を指定してクエリを送信し、過不足ないレスポンスを取得できます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 132,
@@ -1846,7 +2239,10 @@
       ],
       "answer": 1,
       "explanation": "WebSocketは一度接続を確立すると、サーバーとクライアント間で双方向のリアルタイム通信が可能になります。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 133,
@@ -1860,7 +2256,10 @@
       ],
       "answer": 1,
       "explanation": "JWT（JSON Web Token）はヘッダー、ペイロード（データ）、署名の3つの部分で構成されています。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 134,
@@ -1874,7 +2273,10 @@
       ],
       "answer": 3,
       "explanation": "500 Internal Server Errorはサーバー側で予期しないエラーが発生したことを示すステータスコードです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 135,
@@ -1888,7 +2290,10 @@
       ],
       "answer": 1,
       "explanation": "git checkout -bはブランチの作成と切り替えを同時に行います。git switchでも--createオプションで同様のことができます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 136,
@@ -1902,7 +2307,10 @@
       ],
       "answer": 1,
       "explanation": "CORS（Cross-Origin Resource Sharing）は異なるオリジン間でのリソースアクセスを安全に制御する仕組みです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 137,
@@ -1916,7 +2324,10 @@
       ],
       "answer": 1,
       "explanation": "OAuth 2.0のアクセストークンは、クライアントが保護されたリソースにアクセスするための認可情報を表します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 138,
@@ -1930,7 +2341,10 @@
       ],
       "answer": 2,
       "explanation": "継続的デリバリーはリリース可能な状態を維持し手動承認後にデプロイ、継続的デプロイメントは自動で本番環境にデプロイします。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 139,
@@ -1944,7 +2358,10 @@
       ],
       "answer": 1,
       "explanation": "二分探索はソート済み配列を対象に、毎回半分に絞り込むためO(log n)の計算量になります。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 140,
@@ -1958,7 +2375,10 @@
       ],
       "answer": 3,
       "explanation": "APIのバージョニングはURLパス（/v1/users）、クエリパラメータ、HTTPヘッダーで行うのが一般的です。Cookieは使用しません。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 141,
@@ -1972,7 +2392,10 @@
       ],
       "answer": 1,
       "explanation": "S3（Simple Storage Service）はオブジェクトストレージサービスで、ファイルを格納・取得できます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 142,
@@ -1986,7 +2409,10 @@
       ],
       "answer": 1,
       "explanation": "オートスケーリングは負荷の増減に応じてサーバー台数を自動的に増減させ、コスト最適化と可用性を両立させます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 143,
@@ -2000,7 +2426,10 @@
       ],
       "answer": 1,
       "explanation": "AWS Lambdaはリクエスト数と実行時間（メモリ使用量×実行時間）に基づいて課金されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 1
     },
     {
       "id": 144,
@@ -2014,7 +2443,10 @@
       ],
       "answer": 1,
       "explanation": "クラウドネイティブはコンテナ、マイクロサービス、DevOpsなどを活用し、クラウド環境の利点を最大限に活かす設計思想です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 145,
@@ -2028,7 +2460,10 @@
       ],
       "answer": 1,
       "explanation": "VPC（Virtual Private Cloud）はAWS上に論理的に分離されたプライベートネットワークを構築するサービスです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 146,
@@ -2042,7 +2477,10 @@
       ],
       "answer": 1,
       "explanation": "Blue-Greenデプロイメントは本番環境（Blue）と同一構成の新環境（Green）を用意し、切り替えることでダウンタイムなくデプロイできます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 147,
@@ -2056,7 +2494,10 @@
       ],
       "answer": 1,
       "explanation": "KubernetesのServiceはPodへの安定したアクセス（IPアドレス、DNS名）を提供し、負荷分散も行います。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 148,
@@ -2070,7 +2511,10 @@
       ],
       "answer": 1,
       "explanation": "1つのリージョン（地理的領域）には複数のAZ（独立したデータセンター群）が存在し、高可用性を実現できます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 149,
@@ -2084,7 +2528,10 @@
       ],
       "answer": 1,
       "explanation": "GitOpsはGitリポジトリを単一の情報源とし、宣言的にインフラとアプリケーションを管理する手法です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 150,
@@ -2098,7 +2545,10 @@
       ],
       "answer": 1,
       "explanation": "カナリアリリースは一部のユーザー（例：5%）に新バージョンを公開し、問題がないことを確認してから段階的に拡大する手法です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 151,
@@ -2112,7 +2562,10 @@
       ],
       "answer": 1,
       "explanation": "従量課金は使用した分だけ支払うため、初期投資を抑え、需要に応じてコストを最適化できます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 152,
@@ -2126,7 +2579,10 @@
       ],
       "answer": 1,
       "explanation": "RDS（Relational Database Service）はMySQL、PostgreSQL、Oracle等のRDBMSをマネージドサービスとして提供します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 153,
@@ -2140,7 +2596,10 @@
       ],
       "answer": 1,
       "explanation": "イミュータブルインフラストラクチャは既存サーバーを変更せず、新しいイメージから構築した環境に置き換える手法です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 154,
@@ -2154,7 +2613,10 @@
       ],
       "answer": 1,
       "explanation": "サービスメッシュ（Istio等）はマイクロサービス間の通信を制御し、トラフィック管理、認証、可観測性を提供します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 155,
@@ -2168,7 +2630,10 @@
       ],
       "answer": 1,
       "explanation": "FinOpsはクラウドの財務管理実践で、エンジニアリング、財務、ビジネスが協力してクラウドコストを最適化します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 156,
@@ -2182,7 +2647,10 @@
       ],
       "answer": 1,
       "explanation": "WAF（Web Application Firewall）はSQLインジェクションやXSSなどWebアプリケーション層の攻撃を検知・防御します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 157,
@@ -2196,7 +2664,10 @@
       ],
       "answer": 2,
       "explanation": "HTTPSは鍵交換に公開鍵暗号を使い、その後のデータ通信には高速な共通鍵暗号を使うハイブリッド方式です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 158,
@@ -2210,7 +2681,10 @@
       ],
       "answer": 1,
       "explanation": "CSRF（Cross-Site Request Forgery）は、ユーザーが意図しないリクエストを攻撃者が用意したページから送信させる攻撃です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 159,
@@ -2224,7 +2698,10 @@
       ],
       "answer": 1,
       "explanation": "SOC（Security Operation Center）はセキュリティイベントの監視、分析、インシデント対応を24時間体制で行う組織です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 160,
@@ -2238,7 +2715,10 @@
       ],
       "answer": 1,
       "explanation": "ペネトレーションテストは攻撃者の視点で実際に侵入を試み、セキュリティ上の脆弱性を発見・検証するテストです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 161,
@@ -2252,7 +2732,10 @@
       ],
       "answer": 1,
       "explanation": "最小権限の原則は、ユーザーやプロセスに業務に必要な最小限の権限のみを付与することでセキュリティリスクを低減します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 162,
@@ -2266,7 +2749,10 @@
       ],
       "answer": 1,
       "explanation": "SSOは一度の認証で複数のシステムやアプリケーションにアクセスできるため、ユーザーの利便性とセキュリティが向上します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 163,
@@ -2280,7 +2766,10 @@
       ],
       "answer": 1,
       "explanation": "多層防御は複数のセキュリティ対策を重ねて配置し、1つの層が突破されても他の層で防御できるようにする考え方です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 164,
@@ -2294,7 +2783,10 @@
       ],
       "answer": 1,
       "explanation": "IDS（侵入検知システム）は不正アクセスを検知・通知し、IPS（侵入防止システム）は検知に加えて遮断も行えます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 165,
@@ -2308,7 +2800,10 @@
       ],
       "answer": 1,
       "explanation": "ソーシャルエンジニアリングは技術ではなく、人間の心理的な弱点（信頼、恐怖、好奇心等）を悪用して情報を盗む攻撃手法です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 166,
@@ -2322,7 +2817,10 @@
       ],
       "answer": 1,
       "explanation": "AES（Advanced Encryption Standard）は現在広く使用されている共通鍵暗号アルゴリズムで、128/192/256ビットの鍵長をサポートします。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 167,
@@ -2336,7 +2834,10 @@
       ],
       "answer": 1,
       "explanation": "インシデント対応は検知・識別から始まり、封じ込め、根絶、復旧、事後対応（教訓化）の順で進めます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 168,
@@ -2350,7 +2851,10 @@
       ],
       "answer": 1,
       "explanation": "フィッシングは正規のサービスを装った偽のメールやWebサイトでユーザーを騙し、認証情報などを盗む攻撃です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 169,
@@ -2364,7 +2868,10 @@
       ],
       "answer": 1,
       "explanation": "SIEMは様々なシステムからセキュリティログを収集し、分析・相関付けを行い、脅威の検出とインシデント対応を支援します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 170,
@@ -2378,7 +2885,10 @@
       ],
       "answer": 1,
       "explanation": "バッファオーバーフローはプログラムが想定したメモリ領域を超えるデータを書き込み、任意のコード実行などを引き起こす攻撃です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 171,
@@ -2392,7 +2902,10 @@
       ],
       "answer": 1,
       "explanation": "クラスタリングは正解ラベルなしでデータをグループ化する教師なし学習の代表例です。スパム分類や画像認識は教師あり学習です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 172,
@@ -2406,7 +2919,10 @@
       ],
       "answer": 2,
       "explanation": "画像分類はコンピュータビジョンのタスクです。NLPのタスクには感情分析、機械翻訳、固有表現抽出などがあります。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 173,
@@ -2420,7 +2936,10 @@
       ],
       "answer": 1,
       "explanation": "過学習は訓練データに過度に適合し、未知のデータに対する汎化性能が低下する現象です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 174,
@@ -2434,7 +2953,10 @@
       ],
       "answer": 1,
       "explanation": "LiDAR（Light Detection and Ranging）はレーザー光で3D距離を測定する技術で、自動運転や地形計測に使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 175,
@@ -2448,7 +2970,10 @@
       ],
       "answer": 1,
       "explanation": "5Gは高速大容量（eMBB）、超低遅延（URLLC）、多数同時接続（mMTC）の3つの特徴を持つモバイル通信規格です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 176,
@@ -2462,7 +2987,10 @@
       ],
       "answer": 2,
       "explanation": "ChatGPTはテキストを生成する生成AIの代表例です。スパムフィルターや異常検知は分類・検知タスクです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 177,
@@ -2476,7 +3004,10 @@
       ],
       "answer": 1,
       "explanation": "スマートコントラクトはブロックチェーン上で条件に応じて自動実行されるプログラムで、契約の自動化に使用されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 178,
@@ -2490,7 +3021,10 @@
       ],
       "answer": 1,
       "explanation": "ARは現実世界にデジタル情報を重ねて表示し、VRは完全な仮想空間にユーザーを没入させる技術です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 179,
@@ -2504,7 +3038,10 @@
       ],
       "answer": 1,
       "explanation": "MLOpsは機械学習モデルの開発、デプロイ、運用、モニタリングのライフサイクル全体を効率化・自動化する実践です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 180,
@@ -2518,7 +3055,10 @@
       ],
       "answer": 1,
       "explanation": "量子コンピュータは量子ビット（qubit）の重ね合わせや量子もつれを利用し、特定の問題で並列計算の優位性を持ちます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 181,
@@ -2532,7 +3072,10 @@
       ],
       "answer": 1,
       "explanation": "RAGは大規模言語モデルが回答を生成する際に、外部の知識ベースから関連情報を検索して活用する手法です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 182,
@@ -2546,7 +3089,10 @@
       ],
       "answer": 1,
       "explanation": "ディープフェイクは深層学習を使って人物の顔や声を精巧に偽造する技術で、悪用のリスクが指摘されています。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 183,
@@ -2560,7 +3106,10 @@
       ],
       "answer": 1,
       "explanation": "説明可能なAI（XAI）はAIがなぜその判断をしたかを人間が理解できるようにし、信頼性や透明性を高めます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 3
     },
     {
       "id": 184,
@@ -2574,7 +3123,10 @@
       ],
       "answer": 1,
       "explanation": "Web3はブロックチェーン技術を基盤とした分散型のインターネットで、ユーザーがデータの所有権を持つことを目指します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 185,
@@ -2588,7 +3140,10 @@
       ],
       "answer": 1,
       "explanation": "APIエコノミーはAPIを通じて自社サービスを外部に公開し、エコシステムを形成して新たな価値を創出するビジネスモデルです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 186,
@@ -2602,7 +3157,10 @@
       ],
       "answer": 2,
       "explanation": "デザイン思考は共感、定義、発想（Ideate）、プロトタイプ、テストの5段階で構成されます。「実装」は含まれません。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 187,
@@ -2616,7 +3174,10 @@
       ],
       "answer": 1,
       "explanation": "リーンスタートアップはMVP（実用最小限の製品）で仮説を検証し、Build-Measure-Learnのサイクルで素早く学習・改善します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 188,
@@ -2630,7 +3191,10 @@
       ],
       "answer": 1,
       "explanation": "OKRは野心的な目標（Objective）と測定可能な成果指標（Key Results）を設定し、60-70%の達成で成功とみなすフレームワークです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 189,
@@ -2644,7 +3208,10 @@
       ],
       "answer": 1,
       "explanation": "バイモーダルITは安定性重視の従来型IT（モード1）と、俊敏性重視の実験的IT（モード2）を目的に応じて使い分ける考え方です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 190,
@@ -2658,7 +3225,10 @@
       ],
       "answer": 1,
       "explanation": "SLOはサービス品質の目標値（例：可用性99.9%）で、SLA（契約）を満たすための内部目標として設定されます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 191,
@@ -2672,7 +3242,10 @@
       ],
       "answer": 1,
       "explanation": "技術的負債は短期的な解決策や妥協の蓄積により、将来のメンテナンスや機能追加が困難になる状態を指します。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 192,
@@ -2686,7 +3259,10 @@
       ],
       "answer": 2,
       "explanation": "準委任契約は作業の遂行（善管注意義務）に対して報酬が支払われ、請負契約は成果物の完成に対して報酬が支払われます。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 193,
@@ -2700,7 +3276,10 @@
       ],
       "answer": 2,
       "explanation": "要配慮個人情報は人種、信条、病歴、犯罪歴など、不当な差別や偏見につながりうる情報で、取得に本人の同意が必要です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 194,
@@ -2714,7 +3293,10 @@
       ],
       "answer": 1,
       "explanation": "SAP ERP 6.0の標準サポートが2027年に終了予定（延長で2030年）で、多くの企業がシステム刷新を迫られています。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 195,
@@ -2728,7 +3310,10 @@
       ],
       "answer": 1,
       "explanation": "ITIL（IT Infrastructure Library）はITサービス管理のベストプラクティスをまとめたフレームワークです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 196,
@@ -2742,7 +3327,10 @@
       ],
       "answer": 1,
       "explanation": "MVPは仮説検証に必要な最小限の機能を持つ製品で、市場からのフィードバックを得て学習することが目的です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 197,
@@ -2756,7 +3344,10 @@
       ],
       "answer": 2,
       "explanation": "内製化により社内にノウハウが蓄積され、要件変更への迅速な対応や継続的な改善が可能になります。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 198,
@@ -2770,7 +3361,10 @@
       ],
       "answer": 1,
       "explanation": "両利きの経営は既存事業の「深化」（効率化・改善）と新規事業の「探索」（イノベーション）を同時に追求する経営手法です。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 199,
@@ -2784,7 +3378,10 @@
       ],
       "answer": 1,
       "explanation": "SoRは会計や在庫管理など、正確なデータ記録と管理を目的とした基幹システムです。SoE（System of Engagement）は顧客接点システムです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     },
     {
       "id": 200,
@@ -2798,7 +3395,10 @@
       ],
       "answer": 2,
       "explanation": "レトロスペクティブはスプリント終了後にチームで振り返りを行い、プロセスや協力方法の改善点を特定するミーティングです。",
-      "source": {"type": "original"}
+      "source": {
+        "type": "original"
+      },
+      "difficulty": 2
     }
   ]
 }

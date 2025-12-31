@@ -212,6 +212,40 @@ header h1 {
     font-size: 1.5rem;
 }
 
+/* フィルター行 */
+.filter-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-group label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.filter-group select {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    cursor: pointer;
+}
+
+.filter-group select option {
+    background: #16213e;
+    color: #fff;
+}
+
 .category-filter {
     margin-bottom: 30px;
 }
@@ -328,6 +362,29 @@ header h1 {
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
+}
+
+/* 難易度バッジ */
+.difficulty-badge {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-left: 8px;
+}
+
+.difficulty-badge.easy {
+    background: rgba(76, 175, 80, 0.3);
+    color: #81c784;
+}
+
+.difficulty-badge.medium {
+    background: rgba(255, 152, 0, 0.3);
+    color: #ffb74d;
+}
+
+.difficulty-badge.hard {
+    background: rgba(244, 67, 54, 0.3);
+    color: #e57373;
 }
 
 .source-badge {
@@ -866,6 +923,27 @@ header h1 {
 .question-item .q-source.reference {
     background: rgba(156, 39, 176, 0.3);
     color: #ce93d8;
+}
+
+.question-item .q-difficulty {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 8px;
+}
+
+.question-item .q-difficulty.easy {
+    background: rgba(76, 175, 80, 0.3);
+    color: #81c784;
+}
+
+.question-item .q-difficulty.medium {
+    background: rgba(255, 152, 0, 0.3);
+    color: #ffb74d;
+}
+
+.question-item .q-difficulty.hard {
+    background: rgba(244, 67, 54, 0.3);
+    color: #e57373;
 }
 
 .btn-question-list {

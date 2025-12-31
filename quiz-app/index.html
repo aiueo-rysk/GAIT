@@ -29,11 +29,22 @@
 
                 <h2>学習モードを選択</h2>
 
-                <div class="category-filter">
-                    <label for="category-select">カテゴリ:</label>
-                    <select id="category-select">
-                        <option value="all">すべて</option>
-                    </select>
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="category-select">カテゴリ:</label>
+                        <select id="category-select">
+                            <option value="all">すべて</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="difficulty-select">難易度:</label>
+                        <select id="difficulty-select">
+                            <option value="all">すべて</option>
+                            <option value="1">初級</option>
+                            <option value="2">中級</option>
+                            <option value="3">上級</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="mode-buttons">
@@ -135,6 +146,12 @@
                     <select id="filter-category">
                         <option value="all">すべてのカテゴリ</option>
                     </select>
+                    <select id="filter-difficulty">
+                        <option value="all">すべての難易度</option>
+                        <option value="1">初級</option>
+                        <option value="2">中級</option>
+                        <option value="3">上級</option>
+                    </select>
                     <select id="filter-source">
                         <option value="all">すべての出典</option>
                         <option value="original">オリジナル</option>
@@ -144,6 +161,7 @@
                     <select id="sort-by">
                         <option value="id">ID順</option>
                         <option value="category">カテゴリ順</option>
+                        <option value="difficulty">難易度順</option>
                         <option value="rate-asc">正答率（低い順）</option>
                         <option value="rate-desc">正答率（高い順）</option>
                         <option value="count">回答数順</option>
@@ -206,6 +224,7 @@
                 <span id="timer-display" class="timer-display hidden">00:00</span>
                 <button id="btn-bookmark" class="btn-bookmark-toggle" title="お気に入り">☆</button>
                 <span id="category-badge" class="category-badge">カテゴリ</span>
+                <span id="difficulty-badge" class="difficulty-badge medium">中級</span>
                 <span id="source-badge" class="source-badge original">オリジナル</span>
             </div>
 
